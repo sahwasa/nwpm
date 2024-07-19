@@ -1,0 +1,66 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <header>
+      <h1>전산 자원 관리</h1>
+    </header>
+    <section class="cont_body">
+      <div class="filter">
+        <ul class="filter_lst">
+          <li>
+            <select name="" id="" title="검색조건">
+              <option value="">검색조건</option>
+            </select>
+            <input type="text">
+          </li>
+          <li>
+            <select name="" id="" title="사용여부">
+              <option value="">사용여부</option>
+            </select>
+          </li>
+          <li><button type="button" class="btn_blue">검색</button></li>
+        </ul>
+      </div>
+       <div class="tbl_top">        
+        <div class="tool">
+          <button type="button" class="btn_circleAdd" onclick="location.href='experiment_case_add.html'">등록</button>
+        </div>
+      </div>
+      <div class="tbl_wrap">
+        <table class="tbl_default">
+          <caption>자료실 목록</caption>
+          <thead>
+            <tr>
+              <th scope="col">전산 자원명</th>
+              <th scope="col">자원 설명</th>
+              <th scope="col">접속 ID</th>
+              <th scope="col">접속 IP</th>
+              <th scope="col">접속 PORT</th>
+              <th scope="col">등록일시</th>
+              <th scope="col">등록 ID</th>
+              <th scope="col">사용여부</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Weather DataServer</td>
+              <td>기상 데이터베이스 서버</td>
+              <td>system</td>
+              <td>203.0.113.10</td>
+              <td>5432</td>
+              <td>2024-07-16 12:00:00</td>
+              <td>system</td>
+              <td>사용</td>
+            </tr>
+          </tbody>
+        </table>
+        @@include('../../inc/html/paginate.html')
+      </div>
+    </section>  
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>

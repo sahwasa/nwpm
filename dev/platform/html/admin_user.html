@@ -1,0 +1,71 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <header>
+      <h1>사용자 관리</h1>
+    </header>
+    <section class="cont_body">
+      <div class="filter">
+        <ul>
+          <li>
+            <select name="" id="" title="검색조건">
+              <option value="">검색조건</option>
+            </select>
+            <input type="text">
+          </li>
+          <li>
+            <select name="" id="" title="승인여부">
+              <option value="">승인여부</option>
+            </select>
+          </li>
+          <li><button type="button">검색</button></li>
+        </ul>
+      </div>
+      <div class="tbl_top">
+        <div class="tool">
+          <select name="" id="" title="유형"><option value="">유형</option></select>
+          <input type="text">
+        </div>
+      </div>
+      <div class="tbl_wrap">
+        <table class="tbl_default">
+          <caption>자료실 목록</caption>
+          <thead>
+            <tr>
+              <th scope="col"><input type="checkbox" title="전체선택"></th>
+              <th scope="col">사용자 ID</th>
+              <th scope="col">이름</th>
+              <th scope="col">권한</th>
+              <th scope="col">소속기관</th>
+              <th scope="col">부서</th>
+              <th scope="col">등록일시</th>
+              <th scope="col">사용여부</th>
+              <th scope="col">승인여부</th>
+              <th scope="col">수정</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" title="줄선택"></td>
+              <td>System</td>
+              <td>홍길동</td>
+              <td>관리자</td>
+              <td>서울특별시</td>
+              <td>수치예보 활용팀</td>
+              <td>2024-07-16 12:00:00</td>
+              <td>사용</td>
+              <td>승인</td>
+              <td><button type="button" class="btn_modify">수정</button></td>
+            </tr>
+          </tbody>
+        </table>
+        @@include('../../inc/html/paginate.html')
+      </div>
+    </section>  
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>

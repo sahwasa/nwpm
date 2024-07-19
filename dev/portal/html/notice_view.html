@@ -1,0 +1,55 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <header>
+      <h1>공지사항</h1>
+    </header>
+    <section class="cont_body">
+      <div class="tbl_top">
+        <div class="tool">
+          <button type="button" class="btn_prev">이전글</button>
+          <button type="button" class="btn_next">다음글</button>
+          <button type="button" class="btn_list" onclick="location.href='notice.html'">목록</button>
+        </div>
+      </div>
+      <article class="tbl_view">
+        <header>
+          <h1><strong>[KIM 자료]</strong>공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.</h1>
+          <div class="writer_info">
+            <ul class="dot_lst">
+              <li><strong>작성자</strong> 관리자</li>
+              <li><strong>게시일</strong> 2024-06-25 12:34:56</li>
+            </ul>
+          </div>
+        </header>
+        <section class="article_conts">KIM v1.0.0  변경사항 
+새로운 기능 : 로그 기능 추가
+  KIM 수행 관련 로그 기능 추가
+ 
+ 변경된 기능 : 모델 수행 성능 개선
+  KIM 로그 기능 추가로 인한 KIM 수행 시 I/O 작업 제거로 인한
+  KIM 수행 성능 향상
+  
+…
+        </section>
+        <div class="attached">
+          <strong>첨부파일</strong>
+          <ul>
+            <li><a href="" download class="btn_download">다운로드</a> KIM v1.0.0.tar.gz</li>
+          </ul>
+        </div>
+      </article>
+      <div class="tbl_bot">
+        <div class="tool">
+          <button type="button" class="btn_list" onclick="location.href='data.html'">목록</button>
+          <a href="#" class="btn_prev">TOP</a>
+        </div>
+      </div>
+    </section>  
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>

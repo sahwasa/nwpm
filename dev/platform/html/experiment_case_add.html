@@ -1,0 +1,114 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <header>
+      <h1>사례 등록, 수정화면 같이쓰세요</h1>
+      <ul class="breadcrumb">
+        <li><a href="main.html">홈</a></li>
+        <li><a href="experiment_case.html">작업관리</a></li>
+        <li><a href="experiment_case.html">사례실험</a></li>
+        <li>사례 등록</li>
+      </ul>
+    </header>
+    <section class="cont_body">
+      <header class="tit">        
+        <div class="tool">
+          <button type="button" class="btn_save">저장</button>
+          <button type="button" class="btn_back" onclick="location.href='experiment_case.html'">뒤로</button>
+        </div>
+      </header>
+      <div class="flex_ver">
+        <section>
+          <header class="tbl_tit"><h1>작업정보</h1></header>
+          <table class="tbl_row">
+            <caption>작업 정보</caption>
+              <tr>
+                <th scope="row"><label for="">작업 명</label></th>
+                <td><input type="text" placeholder="작업 명"></td>
+                <th scope="row"><label for="">전산 자원</label></th>
+                <td>
+                  <select name="" id=""><option value="">선택</option></select>
+                </td>
+              </tr>
+              <tr>              
+                <th scope="row"><label for="">코어</label></th>
+                <td>
+                  <select name="" id=""><option value="">선택</option></select>
+                </td>
+                <th scope="row"><label for="">CASE</label></th>
+                <td>
+                  <select name="" id=""><option value="">선택</option></select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="">초기 시간</label></th>
+                <td><input type="datetime-local"></td>
+                <th scope="row"><label for="">예측 시간</label></th>
+                <td><input type="datetime-local"></td>             
+              </tr>
+              <tr>
+                <th scope="row"><label for="">육면체구, 격자 수</label></th>
+                <td>
+                  <select name="" id=""><option value="">선택</option></select>
+                </td>
+                <th scope="row"><label for="">적분간격</label></th>
+                <td><input type="text" placeholder="적분간격"></td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="">지형자료</label></th>
+                <td>
+                  <select name="" id=""><option value="">선택</option></select>
+                </td>
+                <th scope="row"><label for="">출력자료 간격</label></th>
+                <td><input type="text" placeholder="출력자료 간격"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <header class="tbl_tit"><h1>가시화정보</h1></header>
+          <table class="tbl_row">
+            <caption>가시화 정보</caption>
+              <tr>
+                <th scope="row">Single-level</th>
+                <td>
+                  <ul class="checkbox_lst">
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Convective precipitation amount</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Multi-level</th>
+                <td>
+                  <ul class="checkbox_lst">
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                    <li><label for=""><input type="checkbox">Surface pressure</label></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="">표출 영역</label></th>
+                <td><select name="" id="" class="not_full"><option value="">선택</option></select></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </section>  
+  </main>
+</div>
+@@include('../inc/script.html')
+</body>
+</html>

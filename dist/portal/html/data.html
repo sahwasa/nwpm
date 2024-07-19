@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="icon" href="../../inc/images/favicon.png" type="image/x-icon" />
+  <title>KIM 공동 활용 포탈</title>
+  <link rel="stylesheet" href="../../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <header class="header">
+  <div class="util">
+    <div class="profile">
+      <b>시스템</b>님 환영합니다.
+      <button type="button" popovertarget="p_login" class="btn_blue">로그인</button>
+      <button type="button" class="btn_grayLine" popovertarget="p_join">회원가입</button>
+      <button type="button" popovertarget="p_login" class="btn_blue">내정보</button>
+      <button type="button" class="btn_grayLine">로그아웃</button>
+    </div>
+  </div>
+  <div class="layout">
+    <h1 class="main_logo"><a href="main.html">기상청 공동 활용 포탈</a></h1>
+    <nav class="nav">
+      <ul class="nav_lst">
+        <li class="on"><a href="../html/intro.html">KMI 소개</a></li>
+        <li><a href="../html/manual.html">KMI 매뉴얼</a></li>
+        <li><a href="../html/download.html">KMI 다운로드</a></li>
+        <li><a href="/platform/html/main.html">공동 활용 플랫폼</a></li>
+        <li><a href="../html/analysis.html">KMI 가시화 분석</a></li>
+        <li><a href="../html/notice.html">공지사항</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>    
+  <main id="content" class="main_container">
+    <header>
+      <h1>자료실</h1>
+    </header>
+    <section class="cont_body">
+      <div class="tbl_top">
+        <div class="total">
+          <span>총 <em>10</em>건,</span>
+          <em>1</em> &sol; <span>1</span>페이지
+        </div>
+        <div class="tool">
+          <select name="" id="" title="유형"><option value="">유형</option></select>
+          <input type="text">
+          <button type="button" class="btn_blue">검색</button>
+        </div>
+      </div>
+      <div class="tbl_wrap tbl_hover">
+        <table class="tbl_default tbl_data">
+          <caption>자료실 목록</caption>
+          <thead>
+            <tr>
+              <th scope="col">번호</th>
+              <th scope="col">유형</th>
+              <th scope="col">제목</th>
+              <th scope="col">등록일시</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onclick="location.href='data_view.html';">
+              <td>10</td>
+              <td>KMI자료</td>
+              <td><span class="ellipsis">공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.공동활용포탈이 오픈하였습니다.</span></td>
+              <td>2024-07-16 12:00:00</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>KMI 매뉴얼</td>
+              <td><span class="ellipsis">공동활용포탈이 오픈하였습니다.</span></td>
+              <td>2024-07-16 12:00:00</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>KMI 매뉴얼</td>
+              <td><span class="ellipsis">공동활용포탈이 오픈하였습니다.</span></td>
+              <td>2024-07-16 12:00:00</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>KMI 매뉴얼</td>
+              <td><span class="ellipsis">공동활용포탈이 오픈하였습니다.</span></td>
+              <td>2024-07-16 12:00:00</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>KMI 매뉴얼</td>
+              <td><span class="ellipsis">공동활용포탈이 오픈하였습니다.</span></td>
+              <td>2024-07-16 12:00:00</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>KMI 매뉴얼</td>
+              <td><span class="ellipsis">공동활용포탈이 오픈하였습니다.</span></td>
+              <td>2024-07-16 12:00:00</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>KMI 매뉴얼</td>
+              <td><span class="ellipsis">공동활용포탈이 오픈하였습니다.</span></td>
+              <td>2024-07-16 12:00:00</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>KMI 매뉴얼</td>
+              <td><span class="ellipsis">공동활용포탈이 오픈하였습니다.</span></td>
+              <td>2024-07-16 12:00:00</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+      </div>
+    </section>  
+  </main>
+  <footer class="footer">
+Copyright © 2024 KMA. All Rights RESERVED.
+</footer>
+</div>
+<dialog id="p_login" class="p_login" popover="auto">
+  <header>
+    <h1>기상청 공동 활용 포탈 로그인</h1>
+    <button type="button" popovertarget="p_login" popovertargetaction="hide" class="cancel">닫기</button>
+  </header>
+  <div>
+    <ul class="ipt_lst">
+      <li><input type="text" title="ID" placeholder="아이디"></li>
+      <li><input type="password" title="비밀번호" placeholder="비밀번호"></li>
+      <li><label for="remember"><input type="checkbox" id="remember">Remember Me</label></li>
+    </ul>
+    <button type="button" class="btn_pull">로그인</button>
+    <div class="etc">
+      <button type="button" popovertarget="p_join">회원가입</button>
+      <span>
+        <button type="button" popovertarget="p_findID">아이디 찾기</button>
+        <button type="button" popovertarget="p_findPW">비밀번호 찾기</button>
+      </span>
+    </div>
+  </div>  
+</dialog>
+<dialog id="p_join" class="p_join" popover="auto">
+  <form action="">
+    <header class="p_header">
+      <h1>회원가입</h1>
+      <button type="button" popovertarget="p_join" popovertargetaction="hide" class="cancel">닫기</button>
+    </header>
+    <div class="p_body">
+      <ul class="ipt_lst_label">      
+        <li><label for="">아이디</label>
+          <span class="tool">
+            <input type="text" required placeholder="아이디 입력"><button class="btn_gray">중복확인</button>
+          </span>
+        </li>
+        <li><label for="">비밀번호</label>
+          <input type="password" required placeholder="비밀번호 입력">
+        </li>
+        <li><label for="">비밀번호 확인</label>
+          <input type="password" required placeholder="비밀번호 확인">
+        </li>
+        <li><label for="">이름</label>
+          <input type="text" required placeholder="이름 입력">
+        </li>
+        <li><label for="">행정 기관</label>
+          <select name="" id="" required><option value="">선택</option></select>
+        </li>
+        <li><label for="">부서명</label>
+          <input type="text" placeholder="부서명 입력">
+        </li>
+        <li><label for="">연락처</label>
+          <input type="text" required placeholder="연락처 입력">
+        </li>
+        <li><label for="">E-mail</label>
+          <input type="text" required placeholder="이메일 입력">
+        </li>
+      </ul>
+      <button type="button" class="btn_pull">회원가입</button>     
+    </div>
+  </form>
+</dialog>
+<dialog id="p_findID" class="p_findID" popover="manual">
+  <form action="">
+    <header class="p_header">
+      <h1>ID찾기</h1>
+      <button type="button" popovertarget="p_findID" popovertargetaction="hide" class="cancel">닫기</button>
+    </header>
+    <div>
+      <ul class="ipt_lst_label">      
+        <li><label for="">이름</label>
+          <span class="tool">
+            <input type="text" required placeholder="이름 입력">
+          </span>
+        </li>
+        <li><label for="">연락처</label>
+          <span class="tool">
+            <input type="text" required placeholder="연락처 입력">
+          </span>
+        </li>
+      </ul>
+      <button type="button" class="btn_pull" popovertarget="p_confirm">찾기</button>
+    </div>
+  </form>
+</dialog>
+<dialog id="p_findPW" class="p_findPW" popover="manual">
+  <form action="">
+    <header class="p_header">
+      <h1>비밀번호 찾기</h1>
+      <button type="button" popovertarget="p_findPW" popovertargetaction="hide" class="cancel">닫기</button>
+    </header>
+    <div>
+      <ul class="ipt_lst_label">      
+        <li><label for="">ID</label>
+          <span class="tool">
+            <input type="text" required placeholder="ID 입력">
+          </span>
+        </li>
+        <li><label for="">이름</label>
+          <span class="tool">
+            <input type="text" required placeholder="이름 입력">
+          </span>
+        </li>
+        <li><label for="">연락처</label>
+          <span class="tool">
+            <input type="text" required placeholder="연락처 입력">
+          </span>
+        </li>
+      </ul>
+      <button type="button" class="btn_pull" popovertarget="p_confirm">찾기</button>
+    </div>
+  </form>
+</dialog>
+<dialog id="p_alert" class="p_alert" popover="manual">
+  <header class="p_header">
+    <h1>알림</h1>
+    <button type="button" popovertarget="p_alert" popoveraction="hide" class="cancel"></button>
+  </header>
+
+  
+</dialog>
+
+<dialog id="p_confirm" class="p_confirm" popover="manual">
+  <header class="p_header">
+    <h1>Confirm</h1>
+    <button type="button" popovertarget="p_confirm" popoveraction="hide" class="cancel"></button>
+  </header>
+  <div>
+    <p>입력하신 정보로 가입된 회원 정보가 없습니다.</p>
+  </div>
+  <div class="btn_wrap">
+    <button type="button" class="btn_blue" popovertarget="p_confirm" popoveraction="hide" >확인</button>
+  </div>
+</dialog>
+<script src="../../plugins/jquery.min.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+<script>
+  commonInit();
+</script>
+</body>
+</html>

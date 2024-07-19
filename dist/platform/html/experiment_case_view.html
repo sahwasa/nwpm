@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="icon" href="../../inc/images/favicon.png" type="image/x-icon" />
+  <title>KIM 공동 활용 포탈</title>
+  <link rel="stylesheet" href="../../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <header class="header">
+  <h1 class="main_logo"><a href="main.html">기상청 공동 활용 플랫폼</a></h1>
+  <div class="util">
+    <div class="profile">
+      <b>시스템</b>님 환영합니다.
+      <p>
+        <strong>마지막 로그인</strong>
+        2024-06-11 09:42:58
+      </p>
+      <div class="btn_wrap">
+        <button type="button">내 정보</button>
+        <button type="button" onclick="location.href='login.html'">로그아웃</button>
+      </div>
+    </div>
+  </div>
+  <nav class="nav">
+    <ul class="nav_lst">
+      <li><a href="../html/experiment_case.html">작업 관리</a>
+        <ul class="sub">
+          <li class="on"><a href="../html/experiment_case.html">사례 실험</a></li>
+          <li><a href="../html/experiment_case.html">이상 실험</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/admin_dataResource.html">시스템 관리</a>
+        <ul class="sub">
+          <li><a href="../html/admin_dataResource.html">전산 자원 관리</a></li>
+          <li><a href="../html/admin_user.html">사용자 관리</a></li>
+          <li><a href="../html/admin_code.html">코드 관리</a></li>
+          <li><a href="../html/admin.html">게시판 관리</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <footer class="footer">
+Copyright © 2024 KMA. All rights reserved.
+</footer>
+</header>    
+  <main id="content" class="main_container">
+    <header>
+      <h1>100㎞ 작업</h1>
+      <ul class="breadcrumb">
+        <li><a href="main.html">홈</a></li>
+        <li><a href="experiment_case.html">작업관리</a></li>
+        <li><a href="experiment_case.html">사례실험</a></li>
+        <li>100㎞ 작업</li>
+      </ul>
+    </header>
+    <section class="cont_body">
+      <header class="tit">
+        <!-- wait,process,success,error -->
+        <div class="work_status wait">
+          <strong>작업상태</strong>Wait<button type="button" class="btn_play">실행</button>
+          <!-- <strong>작업상태</strong>Process<button type="button" class="btn_cancel">취소</button> -->
+          <!-- <strong>작업상태</strong>Success<button type="button" class="btn_download">다운로드</button> -->
+          <!-- <strong>작업상태</strong>Error -->
+        </div>
+        <div class="tool">
+          <button type="button" class="btn_download">다운로드</button>
+          <button type="button" class="btn_delete" popovertarget="p_confirm">삭제</button>
+          <button type="button" class="btn_modify">수정</button>
+          <button type="button" class="btn_back" onclick="location.href='experiment_case.html'">뒤로</button>
+        </div>
+      </header>
+      <div class="flex_ver">
+        <section>
+          <header class="tbl_tit"><h1>작업정보</h1></header>
+          <table class="tbl_row">
+            <caption>작업 정보</caption>
+              <tr>
+                <th scope="row">전산 자원</th>
+                <td>KI Cloud</td>
+                <th scope="row">코어</th>
+                <td>64</td>
+              </tr>
+              <tr>              
+                <th scope="row">CASE</th>
+                <td>Real Case</td>
+                <th scope="row">초기 시간</th>
+                <td>2024-06-11 09:00:00</td>
+              </tr>
+              <tr>
+                <th scope="row">예측 시간</th>
+                <td>1일</td>
+                <th scope="row">육면체구, 격자 수</th>
+                <td>45, 3 (100㎞)</td>
+              </tr>
+              <tr>
+                <th scope="row">적분간격</th>
+                <td>200초</td>
+                <th scope="row">출력자료 간격</th>
+                <td>3시간</td>
+              </tr>
+                <th scope="row">지형자료</th>
+                <td colspan="3">사용</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <header class="tbl_tit"><h1>가시화정보</h1></header>
+          <table class="tbl_row">
+            <caption>가시화 정보</caption>
+              <tr>
+                <th scope="row">Single-level</th>
+                <td>
+                  <ul class="checkbox_lst">
+                    <li>Surface pressure</li>
+                    <li>Convective precipitation amount</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Multi-level</th>
+                <td>
+                  <ul class="checkbox_lst">
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="">표출 영역</label></th>
+                <td><select name="" id=""><option value="">선택</option></select></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="tab_wrap">
+          <div class="tab">
+            <ul class="tab_lst">
+              <li><a href="#tab01" class="on">가시화</a></li>
+              <li><a href="#tab02">이력</a></li>
+            </ul>
+          </div>
+          <div class="tab_container">
+            <section class="tab_cont" id="tab01">
+              <div class="tool">                
+                <div class="select_custom view_opt">
+                  <button class="label"><i class="ico_select single">Single icon</i>Single
+                  </button>
+                  <ul id="viewOpt" class="optionList">                   
+                    <li class="optionItem" tabindex="0" data-value="single"><i class="ico_select single">Single icon</i>Single</li>
+                    <li class="optionItem" tabindex="0" data-value="doubleCol"><i class="ico_select doubleCol">Double Column icon</i>Double Column</li>
+                    <li class="optionItem" tabindex="0" data-value="doubleRow"><i class="ico_select doubleRow">Double row icon</i>Double row
+                    <li class="optionItem" tabindex="0" data-value="triple"><i class="ico_select triple">Triple icon</i>Triple</li>
+                    <li class="optionItem" tabindex="0" data-value="quardruple"><i class="ico_select quardruple">Quadruple icon</i>Quadruple</li>
+                  </ul>
+                </div>
+              </div>
+              <section class="play_map">
+                <!-- map -->
+                <section class="map">
+                  <header>
+                    <div class="select_custom">
+                      <button class="label">
+                        <span class="opt_label">Hgt_t_q_uv-850</span>
+                      </button>
+                      <ul class="optionList">                   
+                        <li class="optionItem" tabindex="0" data-value="1">Hgt_t_q_uv-850</li>
+                        <li class="optionItem" tabindex="0" data-value="2">Hgt_t_uv-300</li>
+                        <li class="optionItem" tabindex="0" data-value="3">Hgt_t_uv-200</li>
+                        <li class="optionItem" tabindex="0" data-value="4"><i class="ico_select low_prio">row icon</i>낮음</li>
+                      </ul>
+                    </div>
+                  </header>
+                  <div class="map_container">                
+                    <section data-empty="가시화할 정보가 없습니다. 모델을 수행하여 주시기 바랍니다."></section>
+                  </div>
+                  <div class="remote_map">
+                    <button type="button" class="prev">이전 결과물</button>
+                    <div class="progress">              
+  <ul class="remote">
+    <li><button type="button" class="play">재생</button> </li>
+    <li><button type="button" class="pause">일시정지</button></li>
+    <li><button type="button" class="stop">정지</button> </li>
+  </ul>
+  <div id="playbar" class="playbar">
+    <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
+  </div>
+</div> 
+                    <button type="button" class="next">다음 결과물</button>
+                  </div>
+                </section>
+                <!-- //map -->
+                <!-- map -->
+                <section class="map">
+                  <header>
+                    <div class="select_custom">
+                      <button class="label">
+                        <span class="opt_label">Hgt_t_q_uv-850</span>
+                      </button>
+                      <ul class="optionList">                   
+                        <li class="optionItem" tabindex="0" data-value="1">Hgt_t_q_uv-850</li>
+                        <li class="optionItem" tabindex="0" data-value="2">Hgt_t_uv-300</li>
+                        <li class="optionItem" tabindex="0" data-value="3">Hgt_t_uv-200</li>
+                        <li class="optionItem" tabindex="0" data-value="4"><i class="ico_select low_prio">row icon</i>낮음</li>
+                      </ul>
+                    </div>
+                  </header>
+                  <div class="map_container">                
+                    <section>
+                      <img src="http://placehold.it/500x400" alt="">
+                    </section>
+                  </div>
+                  <div class="remote_map">
+                    <button type="button" class="prev">이전 결과물</button>
+                    <div class="progress">              
+  <ul class="remote">
+    <li><button type="button" class="play">재생</button> </li>
+    <li><button type="button" class="pause">일시정지</button></li>
+    <li><button type="button" class="stop">정지</button> </li>
+  </ul>
+  <div id="playbar" class="playbar">
+    <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
+  </div>
+</div> 
+                    <button type="button" class="next">다음 결과물</button>
+                  </div>
+                </section>
+                <!-- //map -->
+                <!-- map -->
+                <section class="map">
+                  <header>
+                    <div class="select_custom">
+                      <button class="label">
+                        <span class="opt_label">Hgt_t_q_uv-850</span>
+                      </button>
+                      <ul class="optionList">                   
+                        <li class="optionItem" tabindex="0" data-value="1">Hgt_t_q_uv-850</li>
+                        <li class="optionItem" tabindex="0" data-value="2">Hgt_t_uv-300</li>
+                        <li class="optionItem" tabindex="0" data-value="3">Hgt_t_uv-200</li>
+                        <li class="optionItem" tabindex="0" data-value="4"><i class="ico_select low_prio">row icon</i>낮음</li>
+                      </ul>
+                    </div>
+                  </header>
+                  <div class="map_container">                
+                    <section>
+                      <img src="http://placehold.it/500x400" alt="">
+                    </section>
+                  </div>
+                  <div class="remote_map">
+                    <button type="button" class="prev">이전 결과물</button>
+                    <div class="progress">              
+  <ul class="remote">
+    <li><button type="button" class="play">재생</button> </li>
+    <li><button type="button" class="pause">일시정지</button></li>
+    <li><button type="button" class="stop">정지</button> </li>
+  </ul>
+  <div id="playbar" class="playbar">
+    <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
+  </div>
+</div> 
+                    <button type="button" class="next">다음 결과물</button>
+                  </div>
+                </section>
+                <!-- //map -->
+                <!-- map -->
+                <section class="map">
+                  <header>
+                    <div class="select_custom">
+                      <button class="label">
+                        <span class="opt_label">Hgt_t_q_uv-850</span>
+                      </button>
+                      <ul class="optionList">                   
+                        <li class="optionItem" tabindex="0" data-value="1">Hgt_t_q_uv-850</li>
+                        <li class="optionItem" tabindex="0" data-value="2">Hgt_t_uv-300</li>
+                        <li class="optionItem" tabindex="0" data-value="3">Hgt_t_uv-200</li>
+                        <li class="optionItem" tabindex="0" data-value="4"><i class="ico_select low_prio">row icon</i>낮음</li>
+                      </ul>
+                    </div>
+                  </header>
+                  <div class="map_container">                
+                    <section data-empty="가시화할 정보가 없습니다. 모델을 수행하여 주시기 바랍니다."></section>
+                  </div>
+                  <div class="remote_map">
+                    <button type="button" class="prev">이전 결과물</button>
+                    <div class="progress">              
+  <ul class="remote">
+    <li><button type="button" class="play">재생</button> </li>
+    <li><button type="button" class="pause">일시정지</button></li>
+    <li><button type="button" class="stop">정지</button> </li>
+  </ul>
+  <div id="playbar" class="playbar">
+    <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
+  </div>
+</div> 
+                    <button type="button" class="next">다음 결과물</button>
+                  </div>
+                </section>
+                <!-- //map -->
+              </section>
+            </section>
+            <section class="tab_cont" id="tab02">
+              <div class="tool">
+                <button type="button" class="btn_log" popovertarget="pop_log">서버 로그</button>
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_default">
+                  <thead>
+                    <tr>
+                      <th scope="col">번호</th>
+                      <th scope="col">구분</th>
+                      <th scope="col">내용</th>
+                      <th scope="col">등록 일시</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>5</td>
+                      <td>완료</td>
+                      <td><span class="ellipsis">(info)   (proc[00]) end : grid finalize..</span></td>
+                      <td>2024-06-24 05:25:47</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>  
+  </main>
+</div>
+<dialog id="pop_log" class="pop_log line_style" style="--width:1000px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>서버 로그</h1>
+      <div class="tool">
+        <button type="button" class="cancel" popovertarget="pop_log" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <pre class="box_paleGray">+ finalize variables : step2
+- finalize variables : step2
+----------------------------
+----- end : mkini -----
+----------------------------
+
+(info) (proc[0]) -> Write sfci
+tsfc : min = 0.210878507854823E+03, max = 0.329062920181636E+03
+weasd : min = 0.000000000000000E+00, max = 0.168918461416492E+04
+snowd : min = 0.000000000000000E+00, max = 0.123618346204209E+05
+canopy : min = 0.000000000000000E+00, max = 0.000000000000000E+00
+icec : min = 0.000000000000000E+00, max = 0.100000000000000E+01
+soilm : min = 0.000000000000000E+00, max = 0.100000000000000E+01
+soilt : min = 0.212735651606222E+03, max = 0.322754921428981E+03
+slc : min = 0.000000000000000E+00, max = 0.100000000000000E+01
+
+(info) (proc[00]) finalize atmospheric model (start)
+(info) (proc[00]) finalize atmospheric model (done)
+(info) (proc[00]) start : grid finalize..
+(info) (proc[00]) end : grid finalize..
+</pre>      
+    </section>    
+  </form>
+</dialog>
+<dialog id="p_login" class="p_login" popover="auto">
+  <header>
+    <h1>기상청 공동 활용 포탈 로그인</h1>
+    <button type="button" popovertarget="p_login" popovertargetaction="hide" class="cancel">닫기</button>
+  </header>
+  <div>
+    <ul class="ipt_lst">
+      <li><input type="text" title="ID" placeholder="아이디"></li>
+      <li><input type="password" title="비밀번호" placeholder="비밀번호"></li>
+      <li><label for="remember"><input type="checkbox" id="remember">Remember Me</label></li>
+    </ul>
+    <button type="button" class="btn_pull">로그인</button>
+    <div class="etc">
+      <button type="button" popovertarget="p_join">회원가입</button>
+      <span>
+        <button type="button" popovertarget="p_findID">아이디 찾기</button>
+        <button type="button" popovertarget="p_findPW">비밀번호 찾기</button>
+      </span>
+    </div>
+  </div>  
+</dialog>
+<dialog id="p_join" class="p_join" popover="auto">
+  <form action="">
+    <header class="p_header">
+      <h1>회원가입</h1>
+      <button type="button" popovertarget="p_join" popovertargetaction="hide" class="cancel">닫기</button>
+    </header>
+    <div class="p_body">
+      <ul class="ipt_lst_label">      
+        <li><label for="">아이디</label>
+          <span class="tool">
+            <input type="text" required placeholder="아이디 입력"><button class="btn_gray">중복확인</button>
+          </span>
+        </li>
+        <li><label for="">비밀번호</label>
+          <input type="password" required placeholder="비밀번호 입력">
+        </li>
+        <li><label for="">비밀번호 확인</label>
+          <input type="password" required placeholder="비밀번호 확인">
+        </li>
+        <li><label for="">이름</label>
+          <input type="text" required placeholder="이름 입력">
+        </li>
+        <li><label for="">행정 기관</label>
+          <select name="" id="" required><option value="">선택</option></select>
+        </li>
+        <li><label for="">부서명</label>
+          <input type="text" placeholder="부서명 입력">
+        </li>
+        <li><label for="">연락처</label>
+          <input type="text" required placeholder="연락처 입력">
+        </li>
+        <li><label for="">E-mail</label>
+          <input type="text" required placeholder="이메일 입력">
+        </li>
+      </ul>
+      <button type="button" class="btn_pull">회원가입</button>     
+    </div>
+  </form>
+</dialog>
+<dialog id="p_findID" class="p_findID" popover="manual">
+  <form action="">
+    <header class="p_header">
+      <h1>ID찾기</h1>
+      <button type="button" popovertarget="p_findID" popovertargetaction="hide" class="cancel">닫기</button>
+    </header>
+    <div>
+      <ul class="ipt_lst_label">      
+        <li><label for="">이름</label>
+          <span class="tool">
+            <input type="text" required placeholder="이름 입력">
+          </span>
+        </li>
+        <li><label for="">연락처</label>
+          <span class="tool">
+            <input type="text" required placeholder="연락처 입력">
+          </span>
+        </li>
+      </ul>
+      <button type="button" class="btn_pull" popovertarget="p_confirm">찾기</button>
+    </div>
+  </form>
+</dialog>
+<dialog id="p_findPW" class="p_findPW" popover="manual">
+  <form action="">
+    <header class="p_header">
+      <h1>비밀번호 찾기</h1>
+      <button type="button" popovertarget="p_findPW" popovertargetaction="hide" class="cancel">닫기</button>
+    </header>
+    <div>
+      <ul class="ipt_lst_label">      
+        <li><label for="">ID</label>
+          <span class="tool">
+            <input type="text" required placeholder="ID 입력">
+          </span>
+        </li>
+        <li><label for="">이름</label>
+          <span class="tool">
+            <input type="text" required placeholder="이름 입력">
+          </span>
+        </li>
+        <li><label for="">연락처</label>
+          <span class="tool">
+            <input type="text" required placeholder="연락처 입력">
+          </span>
+        </li>
+      </ul>
+      <button type="button" class="btn_pull" popovertarget="p_confirm">찾기</button>
+    </div>
+  </form>
+</dialog>
+<dialog id="p_alert" class="p_alert" popover="manual">
+  <header class="p_header">
+    <h1>알림</h1>
+    <button type="button" popovertarget="p_alert" popoveraction="hide" class="cancel"></button>
+  </header>
+
+  
+</dialog>
+
+<dialog id="p_confirm" class="p_confirm" popover="manual">
+  <header class="p_header">
+    <h1>Confirm</h1>
+    <button type="button" popovertarget="p_confirm" popoveraction="hide" class="cancel"></button>
+  </header>
+  <div>
+    <p>입력하신 정보로 가입된 회원 정보가 없습니다.</p>
+  </div>
+  <div class="btn_wrap">
+    <button type="button" class="btn_blue" popovertarget="p_confirm" popoveraction="hide" >확인</button>
+    <button type="button" class="btn_red" popovertarget="p_confirm" popoveraction="hide" >삭제</button>
+    <button type="button" class="btn_darkgray" popovertarget="p_confirm" popoveraction="hide" >취소</button>
+  </div>
+</dialog>
+<script src="../../plugins/jquery.min.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+<script>
+  commonInit();
+</script>
+<script>
+//view옵션
+$('#viewOpt').on('click','.optionItem',function(e){
+  var val = e.target.dataset.value;
+  $('.play_map').removeClass().addClass('play_map').addClass(val); 
+})
+//플레이바 (플레이바가 여러개라 소스를 좀 수정해야할거 같은데 ㅠㅠ.. 이거까지 할 여력이 안되네요)
+// playbarEvt();
+window.onresize = function(){
+  posPlaybar = playbarInit();
+  var pctW = pct.offsetWidth,
+      calcPctW = Math.round(pctW / posPlaybar.width * 100);
+
+  if (calcPctW > 100) calcPctW = 100;
+  pct.style.width = calcPctW + "%";
+  playbarEvt();
+}
+function playbarEvt(){
+  var playbar = document.getElementById('playbar'),
+      pct = document.getElementById('pct');
+      // ctrl = document.getElementById('ctrl');
+  dragEvt(pct);
+  clickEvt(playbar);
+}
+function playbarInit(){
+  posPlaybar = {
+    // loc : playbar.offsetParent.offsetLeft + playbar.offsetLeft,//부모 왼쪽 좌표
+    width : playbar.offsetWidth, //바 길이
+    loc : playbar.getBoundingClientRect()
+  };
+  return posPlaybar;
+}
+
+function clickEvt(el){
+  var pos1 = 0, pos2 = 0;
+  posPlaybar = playbarInit();
+  el.onmousedown = onMouseDown;
+  function onMouseDown(e){
+    pos2 = e.clientX;
+    pos1 = pos2 - posPlaybar.loc.left;
+    pct.style.width = pos1 + "px";
+  }
+}
+
+function dragEvt(el){
+  var pos1 = 0, pos2 = 0;
+
+  posPlaybar = playbarInit();
+  el.onmousedown = dragStrat;
+  el.ontouchstart = dragStrat;
+
+  function dragStrat(e){
+    pos2 = e.clientX;       
+    document.onmouseup = closeDragElement;
+    document.ontouchend = closeDragElement;
+    // document.ontouchcancel = closeDragElement;
+    document.onmousemove = elementDrag;
+    document.ontouchmove = elementDrag;
+  }
+  function elementDrag(e){
+    e = e || window.event;
+    console.log(pos1, pos2)
+    
+    if(e.type === 'mousemove'){
+      pos1 = pos2 - e.clientX;
+      pos2 = e.clientX;
+    }else{
+      pos1 = pos2 - e.touches[0].clientX;
+      pos2 = e.touches[0].clientX;
+    }
+    posCalc =  pct.offsetWidth - pos1;
+
+    if (posCalc >= posPlaybar.width) return;
+    pct.style.width = posCalc + "px";
+  }
+
+  function closeDragElement(){
+    document.onmouseup = null;
+    document.onmousemove = null;
+    document.ontouchend = null;
+    document.ontouchmove = null;
+  }
+}
+</script>
+</body>
+</html>

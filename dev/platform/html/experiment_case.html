@@ -1,0 +1,87 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <header>
+      <h1>사례 실험</h1>
+      <ul class="breadcrumb">
+        <li><a href="main.html">홈</a></li>
+        <li><a href="experiment_case.html">작업관리</a></li>
+        <li>사례 실험</li>
+      </ul>
+    </header>
+    <section class="cont_body">
+      <div class="filter">
+        <ul class="filter_lst">
+          <li><input type="text" placeholder="작업명" title="작업명"></li>
+          <li><input type="datetime-local" placeholder="초기 시간" title="초기 시간"></li>
+          <li><select name="" id="" title="작업 상태"><option value="">작업상태</option></select></li>
+          <li><button type="button" class="btn_blue">검색</button></li>
+        </ul>
+      </div>
+      <div class="tbl_top">        
+        <div class="tool">
+          <button type="button" class="btn_circleAdd" onclick="location.href='experiment_case_add.html'">등록</button>
+        </div>
+      </div>
+      <div class="tbl_wrap">
+        <table class="tbl_default tbl_hover">
+          <caption>사례 실험 목록</caption>
+          <thead>
+            <tr>
+              <th scope="col">작업명</th>
+              <th scope="col">CASE</th>
+              <th scope="col">초기 시간</th>
+              <th scope="col">구동 시각</th>
+              <th scope="col">예측 시간</th>
+              <th scope="col">경과 시각</th>
+              <th scope="col">작업상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onclick="location.href='experiment_case_view.html';">
+              <td>ㅇㅇㅇ 대기 가시화</td>
+              <td>Real Case</td>
+              <td>2024-06-11 09:00:00</td>
+              <td>2024-06-11 09:00:00</td>
+              <td>1일</td>
+              <td>2시간</td>
+              <td><span class="f_error">오류</span></td>
+            </tr>
+            <tr>
+              <td>ㅇㅇㅇ 대기 가시화</td>
+              <td>Real Case</td>
+              <td>2024-06-11 09:00:00</td>
+              <td>2024-06-11 09:00:00</td>
+              <td>1일</td>
+              <td>2시간</td>
+              <td><span class="f_process">진행중</span></td>
+            </tr>
+            <tr>
+              <td>ㅇㅇㅇ 대기 가시화</td>
+              <td>Real Case</td>
+              <td>2024-06-11 09:00:00</td>
+              <td>2024-06-11 09:00:00</td>
+              <td>1일</td>
+              <td>2시간</td>
+              <td><span class="f_done">완료</span></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        @@include('../../inc/html/paginate.html')
+      </div>
+    </section>  
+  </main>
+</div>
+@@include('../inc/script.html')
+</body>
+</html>

@@ -1,0 +1,35 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  <main id="content" class="main_container">    
+    <section class="cont_body login">
+      <section class="visual">
+        <h1 class="login_logo">기상청 공동 활용 플랫폼</h1>
+      </section>
+      <article>
+        <header>
+          <h1><strong>공동 활용 플랫폼</strong> 로그인</h1>
+          <p>자율형 공동활용체계 구축을 위한 범용 수치 예보 모델 개발</p>
+        </header>
+        <div>
+          <ul class="ipt_lst">
+            <li><input type="text" title="ID" placeholder="아이디"></li>
+            <li><input type="password" title="비밀번호" placeholder="비밀번호"></li>
+            <li><label for="remember"><input type="checkbox" id="remember">Remember Me</label></li>
+          </ul>
+          <button type="button" class="btn_pull" onclick="location.href='main.html'">로그인</button>
+          <div class="etc">
+            <button type="button" popovertarget="p_join">회원가입</button>
+            <span>
+              <button type="button" popovertarget="p_findID">아이디 찾기</button>
+              <button type="button" popovertarget="p_findPW">비밀번호 찾기</button>
+            </span>
+          </div>
+        </div>
+      </article>
+    </section>  
+  </main>
+  <!-- @@include('../inc/footer.html') -->
+</div>
+@@include('../inc/script.html')
+</body>
+</html>

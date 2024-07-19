@@ -1,0 +1,149 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <header>
+      <h1>코드 관리</h1>
+    </header>
+    <section class="cont_body">
+      <div class="mngCode">
+        <section>
+          <header class="tit">
+            <h1>그룹코드</h1>
+            <div class="tool">
+              <button type="button" class="btn_circleAdd" popovertarget="p_addCode">추가</button>
+              <button type="button" class="btn_circleMinus">삭제</button>
+            </div>
+          </header>
+          <div class="section_body">
+            <div class="tbl_wrap">
+              <table class="tbl_default tbl_hover">
+                <caption>그룹코드 테이블</caption>
+                <thead>
+                  <tr>
+                    <th scope="col"><input type="checkbox" title="전체선택" class="all_check row_check"></th>
+                    <th scope="col">그룹코드</th>
+                    <th scope="col">코드명</th>
+                    <th scope="col">사용여부</th>
+                    <th scope="col">수정</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="group_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td>
+                      <div class="tool switch_toggle">
+                        <input type="checkbox" id="useYN2-1">
+                        <label for="useYN2-1">사용여부</label>
+                      </div>
+                    </td>
+                    <td><button type="button" class="btn_blueLine">수정</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="group_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td>
+                      <div class="tool switch_toggle">
+                        <input type="checkbox" id="useYN2-1">
+                        <label for="useYN2-1">사용여부</label>
+                      </div>
+                    </td>
+                    <td><button type="button" class="btn_blueLine">수정</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>     
+        <section>
+          <header class="tit">
+            <h1>상세코드</h1>
+            <div class="tool">
+              <button type="button" class="btn_circleAdd" popovertarget="p_addCode">추가</button>
+              <button type="button" class="btn_circleMinus">삭제</button>
+            </div>
+          </header>
+          <div class="section_body">
+            <div class="tbl_wrap">
+              <table class="tbl_default tbl_hover">
+                <caption>상세코드 테이블</caption>
+                <thead>
+                  <tr>
+                    <th scope="col"><input type="checkbox" title="전체선택" class="all_check row_check"></th>
+                    <th scope="col">그룹코드</th>
+                    <th scope="col">상위코드</th>
+                    <th scope="col">코드명</th>
+                    <th scope="col">설명</th>
+                    <th scope="col">사용여부</th>
+                    <th scope="col">수정</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td>
+                      <div class="tool switch_toggle">
+                        <input type="checkbox" id="useYN2-1">
+                        <label for="useYN2-1">사용여부</label>
+                      </div>
+                    </td>
+                    <td><button type="button" class="btn_blueLine">수정</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td>
+                      <div class="tool switch_toggle">
+                        <input type="checkbox" id="useYN2-1">
+                        <label for="useYN2-1">사용여부</label>
+                      </div>
+                    </td>
+                    <td><button type="button" class="btn_blueLine">수정</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td>
+                      <div class="tool switch_toggle">
+                        <input type="checkbox" id="useYN2-1">
+                        <label for="useYN2-1">사용여부</label>
+                      </div>
+                    </td>
+                    <td><button type="button" class="btn_blueLine">수정</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>  
+  </main>
+</div>
+@@include('../inc/p_addCode.html')
+@@include('../inc/script.html')
+</body>
+</html>

@@ -1,0 +1,46 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <header>
+      <h1>공지사항</h1>
+    </header>
+    <section class="cont_body">
+      <div class="tbl_top">
+        <div class="total">
+          <span>총 <em>10</em>건,</span>
+          <em>1</em> &sol; <span>1</span>페이지
+        </div>
+        <div class="tool">
+          <select name="" id="" title="유형"><option value="">유형</option></select>
+          <input type="text">
+          <button type="button" class="btn_blue">검색</button>
+        </div>
+      </div>
+      <div class="tbl_wrap tbl_hover">
+        <table class="tbl_default tbl_notice">
+          <caption>공지사항 목록</caption>
+          <thead>
+            <tr>
+              <th scope="col">번호</th>
+              <th scope="col">제목</th>
+              <th scope="col">등록일시</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10</td>
+              <td onclick="location.href='notice_view.html';"><span class="ellipsis">공동활용포탈이 오픈하였습니다.</span></td>
+              <td>2024-07-16 12:00:00</td>
+            </tr>
+          </tbody>
+        </table>
+        @@include('../../inc/html/paginate.html')
+      </div>
+    </section>  
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>

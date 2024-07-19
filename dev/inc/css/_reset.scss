@@ -1,0 +1,59 @@
+@import "./mixin";
+// color
+$white:#fff;
+$black:#363636;
+$red:#e42b29;
+$tomato:#ff4f4f;
+$skyblue:#59c6f2;
+$mint:#32beb4;
+$blue:#1465c0;
+$yellow:#ff9702;
+$paleGray:#eef0f4;
+$blueGray:#eff0f2;
+$gray:#d7d7d7;
+$greyish:#adadad;
+$green:#3eb156;
+$greenblue:#00b0a4;
+$dark:#191d33;
+$_work:(
+  process:#0137ff,
+  success:#17a104,
+  error:#ff0101,
+  wait:#e69507,
+  done:#a5a5a5
+);
+
+*{margin:0;padding:0;font:inherit;color:inherit;font-family:'NanumGothic';}
+*, :after, :before {box-sizing:border-box;}
+:root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;line-height:1.5;overflow-wrap:break-word;-moz-tab-size:4;tab-size:4}
+html, body {height:100vh;}
+img, picture, video, canvas, svg {display:block;max-width:100%;}
+img, b, em, span, strong{display:inline-block;}
+b,em,strong,h1,dt, th{font-weight:700;color:#000;letter-spacing:-.01em;}
+button {background:none;border:0;vertical-align:middle;cursor:pointer;}
+a {display:inline-block;text-decoration:none;}
+table {width:100%;border-collapse:collapse;border-spacing:0}
+caption{@include blind;}
+ul,ol,li{box-sizing:border-box;list-style:none;margin:0;}
+fieldset{border:0;}
+input{accent-color:$blue;vertical-align:middle;}
+input[type="datetime-local"],
+input[type="time"],
+input[type="date"]{position:relative;}
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type='time']::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator{position:relative;z-index:2;right:0;width:13px;height:14px;background:transparent;}
+textarea{min-height:100px;max-height:300px;resize:none;}
+input[list]::-webkit-calendar-picker-indicator{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding-right:20px;background:url(../images/btn_select.png) right 5px center no-repeat, rgba(255,255,255,.9);list-style:none!important;
+  option:nth-of-type(1){color:#989898;}
+}
+input[type="datetime-local"],
+input[type="time"],
+input[type="date"]{width:auto;min-width:140px;
+  &::after{position:absolute;z-index:1;right:5px;top:50%;transform:translateY(-50%);color:#8b95a3;}
+}
+input[type="datetime-local"]::after,
+input[type="date"]::after{@include fontello('\f133');font-size:15px;}
+input[type="time"]::after{@include fontello('\eb02');font-size:18px;}
+label:has(input){display:flex;align-items:center;gap:8px;}

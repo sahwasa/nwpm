@@ -1,0 +1,352 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <header>
+      <h1>100㎞ 작업</h1>
+      <ul class="breadcrumb">
+        <li><a href="main.html">홈</a></li>
+        <li><a href="experiment_case.html">작업관리</a></li>
+        <li><a href="experiment_case.html">사례실험</a></li>
+        <li>100㎞ 작업</li>
+      </ul>
+    </header>
+    <section class="cont_body">
+      <header class="tit">
+        <!-- wait,process,success,error -->
+        <div class="work_status wait">
+          <strong>작업상태</strong>Wait<button type="button" class="btn_play">실행</button>
+          <!-- <strong>작업상태</strong>Process<button type="button" class="btn_cancel">취소</button> -->
+          <!-- <strong>작업상태</strong>Success<button type="button" class="btn_download">다운로드</button> -->
+          <!-- <strong>작업상태</strong>Error -->
+        </div>
+        <div class="tool">
+          <button type="button" class="btn_download">다운로드</button>
+          <button type="button" class="btn_delete" popovertarget="p_confirm">삭제</button>
+          <button type="button" class="btn_modify">수정</button>
+          <button type="button" class="btn_back" onclick="location.href='experiment_case.html'">뒤로</button>
+        </div>
+      </header>
+      <div class="flex_ver">
+        <section>
+          <header class="tbl_tit"><h1>작업정보</h1></header>
+          <table class="tbl_row">
+            <caption>작업 정보</caption>
+              <tr>
+                <th scope="row">전산 자원</th>
+                <td>KI Cloud</td>
+                <th scope="row">코어</th>
+                <td>64</td>
+              </tr>
+              <tr>              
+                <th scope="row">CASE</th>
+                <td>Real Case</td>
+                <th scope="row">초기 시간</th>
+                <td>2024-06-11 09:00:00</td>
+              </tr>
+              <tr>
+                <th scope="row">예측 시간</th>
+                <td>1일</td>
+                <th scope="row">육면체구, 격자 수</th>
+                <td>45, 3 (100㎞)</td>
+              </tr>
+              <tr>
+                <th scope="row">적분간격</th>
+                <td>200초</td>
+                <th scope="row">출력자료 간격</th>
+                <td>3시간</td>
+              </tr>
+                <th scope="row">지형자료</th>
+                <td colspan="3">사용</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <header class="tbl_tit"><h1>가시화정보</h1></header>
+          <table class="tbl_row">
+            <caption>가시화 정보</caption>
+              <tr>
+                <th scope="row">Single-level</th>
+                <td>
+                  <ul class="checkbox_lst">
+                    <li>Surface pressure</li>
+                    <li>Convective precipitation amount</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Multi-level</th>
+                <td>
+                  <ul class="checkbox_lst">
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                    <li>Surface pressure</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="">표출 영역</label></th>
+                <td><select name="" id=""><option value="">선택</option></select></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="tab_wrap">
+          <div class="tab">
+            <ul class="tab_lst">
+              <li><a href="#tab01" class="on">가시화</a></li>
+              <li><a href="#tab02">이력</a></li>
+            </ul>
+          </div>
+          <div class="tab_container">
+            <section class="tab_cont" id="tab01">
+              <div class="tool">                
+                <div class="select_custom view_opt">
+                  <button class="label"><i class="ico_select single">Single icon</i>Single
+                  </button>
+                  <ul id="viewOpt" class="optionList">                   
+                    <li class="optionItem" tabindex="0" data-value="single"><i class="ico_select single">Single icon</i>Single</li>
+                    <li class="optionItem" tabindex="0" data-value="doubleCol"><i class="ico_select doubleCol">Double Column icon</i>Double Column</li>
+                    <li class="optionItem" tabindex="0" data-value="doubleRow"><i class="ico_select doubleRow">Double row icon</i>Double row
+                    <li class="optionItem" tabindex="0" data-value="triple"><i class="ico_select triple">Triple icon</i>Triple</li>
+                    <li class="optionItem" tabindex="0" data-value="quardruple"><i class="ico_select quardruple">Quadruple icon</i>Quadruple</li>
+                  </ul>
+                </div>
+              </div>
+              <section class="play_map">
+                <!-- map -->
+                <section class="map">
+                  <header>
+                    <div class="select_custom">
+                      <button class="label">
+                        <span class="opt_label">Hgt_t_q_uv-850</span>
+                      </button>
+                      <ul class="optionList">                   
+                        <li class="optionItem" tabindex="0" data-value="1">Hgt_t_q_uv-850</li>
+                        <li class="optionItem" tabindex="0" data-value="2">Hgt_t_uv-300</li>
+                        <li class="optionItem" tabindex="0" data-value="3">Hgt_t_uv-200</li>
+                        <li class="optionItem" tabindex="0" data-value="4"><i class="ico_select low_prio">row icon</i>낮음</li>
+                      </ul>
+                    </div>
+                  </header>
+                  <div class="map_container">                
+                    <section data-empty="가시화할 정보가 없습니다. 모델을 수행하여 주시기 바랍니다."></section>
+                  </div>
+                  <div class="remote_map">
+                    <button type="button" class="prev">이전 결과물</button>
+                    @@include('../inc/playbar.html')
+                    <button type="button" class="next">다음 결과물</button>
+                  </div>
+                </section>
+                <!-- //map -->
+                <!-- map -->
+                <section class="map">
+                  <header>
+                    <div class="select_custom">
+                      <button class="label">
+                        <span class="opt_label">Hgt_t_q_uv-850</span>
+                      </button>
+                      <ul class="optionList">                   
+                        <li class="optionItem" tabindex="0" data-value="1">Hgt_t_q_uv-850</li>
+                        <li class="optionItem" tabindex="0" data-value="2">Hgt_t_uv-300</li>
+                        <li class="optionItem" tabindex="0" data-value="3">Hgt_t_uv-200</li>
+                        <li class="optionItem" tabindex="0" data-value="4"><i class="ico_select low_prio">row icon</i>낮음</li>
+                      </ul>
+                    </div>
+                  </header>
+                  <div class="map_container">                
+                    <section>
+                      <img src="http://placehold.it/500x400" alt="">
+                    </section>
+                  </div>
+                  <div class="remote_map">
+                    <button type="button" class="prev">이전 결과물</button>
+                    @@include('../inc/playbar.html')
+                    <button type="button" class="next">다음 결과물</button>
+                  </div>
+                </section>
+                <!-- //map -->
+                <!-- map -->
+                <section class="map">
+                  <header>
+                    <div class="select_custom">
+                      <button class="label">
+                        <span class="opt_label">Hgt_t_q_uv-850</span>
+                      </button>
+                      <ul class="optionList">                   
+                        <li class="optionItem" tabindex="0" data-value="1">Hgt_t_q_uv-850</li>
+                        <li class="optionItem" tabindex="0" data-value="2">Hgt_t_uv-300</li>
+                        <li class="optionItem" tabindex="0" data-value="3">Hgt_t_uv-200</li>
+                        <li class="optionItem" tabindex="0" data-value="4"><i class="ico_select low_prio">row icon</i>낮음</li>
+                      </ul>
+                    </div>
+                  </header>
+                  <div class="map_container">                
+                    <section>
+                      <img src="http://placehold.it/500x400" alt="">
+                    </section>
+                  </div>
+                  <div class="remote_map">
+                    <button type="button" class="prev">이전 결과물</button>
+                    @@include('../inc/playbar.html')
+                    <button type="button" class="next">다음 결과물</button>
+                  </div>
+                </section>
+                <!-- //map -->
+                <!-- map -->
+                <section class="map">
+                  <header>
+                    <div class="select_custom">
+                      <button class="label">
+                        <span class="opt_label">Hgt_t_q_uv-850</span>
+                      </button>
+                      <ul class="optionList">                   
+                        <li class="optionItem" tabindex="0" data-value="1">Hgt_t_q_uv-850</li>
+                        <li class="optionItem" tabindex="0" data-value="2">Hgt_t_uv-300</li>
+                        <li class="optionItem" tabindex="0" data-value="3">Hgt_t_uv-200</li>
+                        <li class="optionItem" tabindex="0" data-value="4"><i class="ico_select low_prio">row icon</i>낮음</li>
+                      </ul>
+                    </div>
+                  </header>
+                  <div class="map_container">                
+                    <section data-empty="가시화할 정보가 없습니다. 모델을 수행하여 주시기 바랍니다."></section>
+                  </div>
+                  <div class="remote_map">
+                    <button type="button" class="prev">이전 결과물</button>
+                    @@include('../inc/playbar.html')
+                    <button type="button" class="next">다음 결과물</button>
+                  </div>
+                </section>
+                <!-- //map -->
+              </section>
+            </section>
+            <section class="tab_cont" id="tab02">
+              <div class="tool">
+                <button type="button" class="btn_log" popovertarget="pop_log">서버 로그</button>
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_default">
+                  <thead>
+                    <tr>
+                      <th scope="col">번호</th>
+                      <th scope="col">구분</th>
+                      <th scope="col">내용</th>
+                      <th scope="col">등록 일시</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>5</td>
+                      <td>완료</td>
+                      <td><span class="ellipsis">(info)   (proc[00]) end : grid finalize..</span></td>
+                      <td>2024-06-24 05:25:47</td>
+                    </tr>
+                  </tbody>
+                </table>
+                @@include('../../inc/html/paginate.html')
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>  
+  </main>
+</div>
+@@include('../inc/p_log.html')
+@@include('../inc/script.html')
+<script>
+//view옵션
+$('#viewOpt').on('click','.optionItem',function(e){
+  var val = e.target.dataset.value;
+  $('.play_map').removeClass().addClass('play_map').addClass(val); 
+})
+//플레이바 (플레이바가 여러개라 소스를 좀 수정해야할거 같은데 ㅠㅠ.. 이거까지 할 여력이 안되네요)
+// playbarEvt();
+window.onresize = function(){
+  posPlaybar = playbarInit();
+  var pctW = pct.offsetWidth,
+      calcPctW = Math.round(pctW / posPlaybar.width * 100);
+
+  if (calcPctW > 100) calcPctW = 100;
+  pct.style.width = calcPctW + "%";
+  playbarEvt();
+}
+function playbarEvt(){
+  var playbar = document.getElementById('playbar'),
+      pct = document.getElementById('pct');
+      // ctrl = document.getElementById('ctrl');
+  dragEvt(pct);
+  clickEvt(playbar);
+}
+function playbarInit(){
+  posPlaybar = {
+    // loc : playbar.offsetParent.offsetLeft + playbar.offsetLeft,//부모 왼쪽 좌표
+    width : playbar.offsetWidth, //바 길이
+    loc : playbar.getBoundingClientRect()
+  };
+  return posPlaybar;
+}
+
+function clickEvt(el){
+  var pos1 = 0, pos2 = 0;
+  posPlaybar = playbarInit();
+  el.onmousedown = onMouseDown;
+  function onMouseDown(e){
+    pos2 = e.clientX;
+    pos1 = pos2 - posPlaybar.loc.left;
+    pct.style.width = pos1 + "px";
+  }
+}
+
+function dragEvt(el){
+  var pos1 = 0, pos2 = 0;
+
+  posPlaybar = playbarInit();
+  el.onmousedown = dragStrat;
+  el.ontouchstart = dragStrat;
+
+  function dragStrat(e){
+    pos2 = e.clientX;       
+    document.onmouseup = closeDragElement;
+    document.ontouchend = closeDragElement;
+    // document.ontouchcancel = closeDragElement;
+    document.onmousemove = elementDrag;
+    document.ontouchmove = elementDrag;
+  }
+  function elementDrag(e){
+    e = e || window.event;
+    console.log(pos1, pos2)
+    
+    if(e.type === 'mousemove'){
+      pos1 = pos2 - e.clientX;
+      pos2 = e.clientX;
+    }else{
+      pos1 = pos2 - e.touches[0].clientX;
+      pos2 = e.touches[0].clientX;
+    }
+    posCalc =  pct.offsetWidth - pos1;
+
+    if (posCalc >= posPlaybar.width) return;
+    pct.style.width = posCalc + "px";
+  }
+
+  function closeDragElement(){
+    document.onmouseup = null;
+    document.onmousemove = null;
+    document.ontouchend = null;
+    document.ontouchmove = null;
+  }
+}
+</script>
+</body>
+</html>

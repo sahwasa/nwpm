@@ -1,0 +1,33 @@
+<dialog id="p_addCode" class="p_addCode line_style" style="--width:450px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>그룹코드(상세코드) 추가 및 수정</h1>
+      <div class="tool">
+        <button type="button" class="cancel" popovertarget="p_addCode" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="form_lst inline">
+        <li>
+          <label for="">그룹코드</label>
+          <input type="text" placeholder="그룹코드" required>
+          <button type="button" class="btn btn_gray">중복체크</button>
+          <p class="invalid">중복된 코드입니다</p>
+        </li>
+        <li><label for="">코드명</label><input type="text" required placeholder="코드명"></li>
+        <li><label for="">설명</label><input type="text" placeholder="설명"></li>
+        <li><label for="">순서</label><input type="text" placeholder="순서"></li>
+        <li><strong class="label">사용여부</strong>
+          <div class="switch_toggle">
+            <input type="checkbox" id="useYN2-1">
+            <label for="useYN2-1">사용여부</label>
+          </div>
+        </li>       
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_black">등록</button>
+      <button type="button" class="btn_darkgray" popovertarget="p_addCode" popvertargetaction="hide">닫기</button>
+    </section>
+  </form>
+</dialog>

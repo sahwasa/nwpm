@@ -1,0 +1,182 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <header class="blind">
+      <h1>메인</h1>
+    </header>
+    <section class="cont_body main">
+      <div id="slider1_container">
+        <div class="slides">
+          <section class="slide01">
+            <div class="slideContentWrap s01">
+              <strong class="bannerTit">KMI 가시화 분석</strong>
+              <div class="bannerTxt">
+                <p>사용자를 위한 정합성 검증, 모델 결과 시각화, 재분석자료와의 분석검증을 지원합니다.</p>
+              </div>
+              <a href="#" class="btn_go">자세히 보기</a>
+            </div>
+          </section>
+          
+          <section class="slide02">
+            <div class="slideContentWrap s02">
+              <strong class="bannerTit">KMI소개</strong>            
+              <div class="bannerTxt">
+                <p>사용자를 위한 KIM 모델 수행 방법 및 모델 자료를 지원합니다.</p>
+              </div>
+              <a href="#" class="btn_go">자세히 보기</a>
+            </div>
+          </section>
+          
+          <section class="slide03">
+            <div class="slideContentWrap s03">
+              <strong class="bannerTit">공동 활용 플랫폼</strong>            
+              <div class="bannerTxt">
+                <p>사용자를 위한 KIM 모델 수행, 가시화 기능을 지원합니다.</p>
+              </div>
+              <a href="#" class="btn_go">자세히 보기</a>
+              </div>
+          </section>          
+        </div>        
+        <div class="remote">
+          <ul class="remoteBtn">
+            <li><button type="button" id="btn_prev_banner" class="prevBtn">이전</button></li>
+            <li><button type="button" id="btn_stop_banner" class="stopBtn">정지</button></li>
+            <li><button type="button" id="btn_next_banner" class="nextBtn">다음</button></li>
+          </ul>
+          <div class="slideNav">
+            <strong>1</strong>3
+          </div>
+        </div>
+      </div>
+      <div class="bot_area">
+        <div class="layout">
+          <section class="banner">
+            <strong>KIM 소개</strong>
+            <div>
+              <p>대한민국 환경을 적용한 <em>한국형 수치예보 모델(KIM)</em>에 대해 쉽게 알 수 있습니다.</p>
+            </div>
+            <a href="intro.html" class="btn_more">더보기</a>
+          </section>
+          <section class="banner">
+            <strong>KIM 자료실</strong>
+            <div>
+              <p>대한민국 환경을 적용한 <em>한국형 수치예보 모델(KIM)</em>에 대한 자료를 확인 하실 수 있습니다.</p>
+            </div>
+            <a href="data.html" class="btn_more">더보기</a>
+          </section>
+          <section>
+            <strong>공지사항</strong>
+            <ul class="dot_lst">
+              <li><a href="">공동활요 포탈이 오픈하였습니다.</a><span class="date">2024.07.01</span></li>
+              <li><a href="">공동활요 포탈이 오픈하였습니다.</a><span class="date">2024.07.01</span></li>
+              <li><a href="">공동활요 포탈이 오픈하였습니다.</a><span class="date">2024.07.01</span></li>
+              <li><a href="">공동활요 포탈이 오픈하였습니다.</a><span class="date">2024.07.01</span></li>
+            </ul>
+            <a href="notice.html" class="btn_more">더보기</a>
+          </section>
+        </div>
+      </div>     
+    </section>  
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+<script>
+var BANNER_WIDTH = 1400; // 배너 넓이
+var SHOW_DURATION = 1000; // 배너 속도
+var AUTO_PLAY_TIME = 8000; //배너 지연 시간
+var $banner_content;
+var nBannerLength = 0;
+var nCurrentBannerIndex = 0;
+var slideCont=$('.slideContentWrap');
+var $banner_dots;
+var $slideNav=$('.slideNav');
+var autoTImerID;
+var initY = -300; // 제목 높이값 초기화
+var contentY = 64; // 애니메이션 후 제목 높이값
+$(document).ready(function(){
+	initMenu();
+	initEventListener();
+	startAutoPlay();
+});
+function initMenu(){
+	$banner_content = $(".slides");
+	$slide = $banner_content.children("section");
+	nBannerLength = $slide.length;	
+	$banner_content.width((BANNER_WIDTH) * nBannerLength);	
+	$banner_dots = $(".naviWrap li");
+	showBannerDotAt(0);
+	autoTImerID = 0;
+	$('.s01').animate({top:contentY},SHOW_DURATION);
+}
+function initEventListener(){
+	$("#btn_prev_banner").on("click", function(){
+		prevBanner();
+	});
+	$("#btn_next_banner").on("click", function(){
+		nextBanner();
+	});
+	$("#btn_stop_banner").on("click", function(){
+		stopAutoPlay();
+	});
+	$("#btn_play_banner").on("click", function(){
+		startAutoPlay();
+	});
+	$banner_dots.on("mouseenter",function(){
+		var nIndex = $banner_dots.index(this);
+		showBannerAt(nIndex);
+		$slide.eq(nCurrentBannerIndex).children('.slideContentWrap').animate({top:contentY},SHOW_DURATION);
+	})
+	var $banner_slider = $("#slider1_container");
+}
+function prevBanner(){	
+	var nIndex=nCurrentBannerIndex-1;
+	if(nIndex<0)
+	nIndex = nBannerLength-1;
+	showBannerAt(nIndex);
+	$slide.eq(nCurrentBannerIndex+1).children('.slideContentWrap').animate({top:initY},SHOW_DURATION);
+	$slide.eq(nCurrentBannerIndex).children('.slideContentWrap').animate({top:contentY},SHOW_DURATION);		
+}
+function nextBanner(){	
+	var nIndex = nCurrentBannerIndex+1;
+	if(nIndex >= nBannerLength)
+	nIndex = 0;
+	showBannerAt(nIndex);	
+	$slide.eq(nCurrentBannerIndex).children('.slideContentWrap').animate({top:contentY},SHOW_DURATION, function(){
+    $slide.eq(nCurrentBannerIndex-1).children('.slideContentWrap').animate({top:initY},SHOW_DURATION);
+  });
+}
+function showBannerAt(nIndex){
+  if (nIndex != this.nCurrentBannerIndex) {		
+		var nPosition
+		nPosition = -BANNER_WIDTH * nIndex;
+
+		this.showBannerDotAt(nIndex);
+		$banner_content.stop();		
+		$banner_content.animate({			
+			left: nPosition
+		}, SHOW_DURATION);
+		this.nCurrentBannerIndex = nIndex;
+	}	
+}
+function showBannerDotAt(nIndex){
+  this.$slideNav.children('strong').text(nIndex+1);
+	this.$banner_dots.eq(this.nCurrentBannerIndex).removeClass("on");
+	this.$banner_dots.eq(nIndex).addClass("on");
+}
+function startAutoPlay(){
+	if(this.autoTimerID!=0)
+		clearInterval(this.autoTimerID);
+	this.autoTimerID = setInterval(function(){
+		nextBanner();
+	},this.AUTO_PLAY_TIME);
+}
+function stopAutoPlay(){
+	if(this.autoTimerID!=0)
+		clearInterval(this.autoTimerID);
+	this.autoTimerID = 0;
+}
+</script>
+</body>
+</html>
