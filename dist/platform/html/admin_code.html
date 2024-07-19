@@ -40,7 +40,7 @@
           <li><a href="../html/admin_dataResource.html">전산 자원 관리</a></li>
           <li><a href="../html/admin_user.html">사용자 관리</a></li>
           <li><a href="../html/admin_code.html">코드 관리</a></li>
-          <li><a href="../html/admin.html">게시판 관리</a></li>
+          <li><a href="../html/admin_board.html">게시판 관리</a></li>
         </ul>
       </li>
     </ul>
@@ -60,7 +60,7 @@ Copyright © 2024 KMA. All rights reserved.
             <h1>그룹코드</h1>
             <div class="tool">
               <button type="button" class="btn_circleAdd" popovertarget="p_addCode">추가</button>
-              <button type="button" class="btn_circleMinus">삭제</button>
+              <button type="button" class="btn_circleMinus" popovertarget="p_confirm">삭제</button>
             </div>
           </header>
           <div class="section_body">
@@ -337,11 +337,10 @@ Copyright © 2024 KMA. All rights reserved.
 </dialog>
 <dialog id="p_alert" class="p_alert" popover="manual">
   <header class="p_header">
-    <h1>알림</h1>
+    <h1>alert</h1>
     <button type="button" popovertarget="p_alert" popoveraction="hide" class="cancel"></button>
   </header>
-
-  
+  <p>alert</p>
 </dialog>
 
 <dialog id="p_confirm" class="p_confirm" popover="manual">
@@ -350,9 +349,10 @@ Copyright © 2024 KMA. All rights reserved.
     <button type="button" popovertarget="p_confirm" popoveraction="hide" class="cancel"></button>
   </header>
   <div>
-    <p>입력하신 정보로 가입된 회원 정보가 없습니다.</p>
+   <p>입력하신 정보로 가입된 회원 정보가 없습니다.</p>
   </div>
   <div class="btn_wrap">
+    <!-- <button type="button" class="btn_blue" popovertarget="p_confirm" popoveraction="hide" >비밀번호 초기화</button> -->
     <button type="button" class="btn_blue" popovertarget="p_confirm" popoveraction="hide" >확인</button>
     <button type="button" class="btn_red" popovertarget="p_confirm" popoveraction="hide" >삭제</button>
     <button type="button" class="btn_darkgray" popovertarget="p_confirm" popoveraction="hide" >취소</button>

@@ -1,0 +1,54 @@
+<dialog id="p_addDataResource" class="p_addDataResource line_style" style="--width:500px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>전산자원 등록 및 수정</h1>
+      <div class="tool">
+        <button type="button" class="cancel" popovertarget="p_addDataResource" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="form_lst inline">
+        <li>
+          <label for="">전산자원 ID</label>
+          <input type="text" required>
+        </li>
+        <li>
+          <label for="">전산자원명</label>
+          <input type="text" required>
+        </li>
+        <li>
+          <label for="">자원 설명</label>
+          <input type="text" required>
+        </li>
+        <li>
+          <label for="">접속 IP</label>
+          <input type="text" required>
+        </li>
+        <li>
+          <label for="">접속 PORT</label>
+          <input type="text" required>
+        </li>
+        <li>
+          <label for="">접속 ID</label>
+          <input type="text" required>
+        </li>
+        <li>
+          <label for="">비밀번호</label>
+          <input type="password" required>
+        </li>
+        <li><strong class="label">사용여부</strong>
+          <div class="switch_toggle">
+            <input type="checkbox" id="useYN2-1">
+            <label for="useYN2-1">사용여부</label>
+          </div>
+        </li>       
+      </ul>
+      <button type="button" class="btn_test">테스트</button>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_black">등록</button>
+      <button type="button" class="btn_red" popovertarget="p_confirm">삭제</button>
+      <button type="button" class="btn_darkgray" popovertarget="p_addDataResource" popvertargetaction="hide">닫기</button>
+    </section>
+  </form>
+</dialog>

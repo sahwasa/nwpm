@@ -191,3 +191,40 @@
   }
   i{display:flex;align-items:center;font-size:0;}  
 }
+
+// attach
+.file_attach{position:relative;display:flex;align-items:center;min-height:70px;border:2px dashed #ebebeb;background-color:#fff;}  
+.drop_zone,
+.attach_zone{width:100%;height:100%;align-self:flex-start;}
+.attach_list{display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding:10px;}
+.attach_list li{position:relative;display:flex;gap:5px;padding:0;border-top:none;z-index:1000;text-align:left;line-height:17px;
+  &::before,
+  &::after{display:none;}
+}
+.file_attach:hover{border-color:#ccc;}
+.file_attach .drop_info{display:none;position:absolute;left:0;top:50%;transform:translateY(-50%);gap:30px;align-items:center; color:#989898;text-align:left;word-break:keep-all;font-size:12px;line-height:15px;letter-spacing:-.3px;padding:0 15px;
+  &::before{display:flex;align-items:center;width:101px;height:36px;border:2px solid #d83d48;border-radius:5px;background:url(../images/ic-file.png) 11px 50% no-repeat,#fff;content:"파일선택";color:#f05050;padding:0 14px 0 43px;}
+  p{flex-grow:1;}
+  span{color:#000;}
+}
+.file_attach:has(.attach_list:empty) .drop_info{display:flex;}
+.attach_thumb{display:block;max-width:20px;max-height:20px;}
+.btn_file_wrap,
+.file_attach{overflow:hidden;position:relative;text-align:center;}
+.btn_file_wrap{
+  input::-webkit-file-upload-button{cursor:pointer;}
+  &:hover{.btn_red{background-color:#fff;color:$red;}}
+}
+.btn_file_wrap .btn_file,
+.file_attach .btn_file{position:absolute;top:-1px;left:-1px; right:-1px;bottom:-1px;border:none;opacity:0;filter:alpha(opacity=0);cursor:pointer;outline:none;z-index:100;}
+.file_del{@include shape(15px,17px);flex-shrink:0;
+  &::before{@include fontello('\e928');font-size:13px;color:$red;line-height:17px;} 
+}
+.file_attached{position:relative;border:1px solid #ebebeb;
+  .attach_list li a{display:flex;gap:7px;
+    &.preview{flex-shrink:0;}
+    &.download::after{@include fontello('\eae8');font-size:20px;}
+    &:hover:has(img){outline:1px solid $blue;}
+  }
+  i{flex-shrink:0;position:relative;top:1px;}  
+}

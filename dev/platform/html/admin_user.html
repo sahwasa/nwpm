@@ -4,10 +4,15 @@
   <main id="content" class="main_container">
     <header>
       <h1>사용자 관리</h1>
+      <ul class="breadcrumb">
+        <li><a href="main.html">홈</a></li>
+        <li><a href="admin_dataResource.html">시스템 관리</a></li>
+        <li>사용자 관리</li>
+      </ul>
     </header>
     <section class="cont_body">
       <div class="filter">
-        <ul>
+        <ul class="filter_lst">
           <li>
             <select name="" id="" title="검색조건">
               <option value="">검색조건</option>
@@ -19,18 +24,18 @@
               <option value="">승인여부</option>
             </select>
           </li>
-          <li><button type="button">검색</button></li>
+          <li><button type="button" class="btn_blue">검색</button></li>
         </ul>
       </div>
       <div class="tbl_top">
         <div class="tool">
-          <select name="" id="" title="유형"><option value="">유형</option></select>
-          <input type="text">
+          <button type="button" class="btn_circleAdd" popovertarget="p_addDataResource">등록</button>
+          <button type="button" class="btn_circleMinus" popovertarget="p_addDataResource">삭제</button>
         </div>
       </div>
       <div class="tbl_wrap">
         <table class="tbl_default">
-          <caption>자료실 목록</caption>
+          <caption>사용자 목록</caption>
           <thead>
             <tr>
               <th scope="col"><input type="checkbox" title="전체선택"></th>
@@ -64,7 +69,6 @@
       </div>
     </section>  
   </main>
-  @@include('../inc/footer.html')
 </div>
 @@include('../inc/script.html')
 </body>
