@@ -171,7 +171,7 @@ Copyright © 2024 KMA. All rights reserved.
                   </ul>
                 </div>
               </div>
-              <section class="play_map">
+              <section class="play_map doubleCol">
                 <!-- map -->
                 <section class="map">
                   <header>
@@ -192,16 +192,16 @@ Copyright © 2024 KMA. All rights reserved.
                   </div>
                   <div class="remote_map">
                     <button type="button" class="prev">이전 결과물</button>
-                    <div class="progress">              
-  <ul class="remote">
-    <li><button type="button" class="play">재생</button> </li>
-    <li><button type="button" class="pause">일시정지</button></li>
-    <li><button type="button" class="stop">정지</button> </li>
-  </ul>
-  <div id="playbar" class="playbar">
-    <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
-  </div>
-</div> 
+                    <div class="progress">
+                      <ul class="remote">
+                        <li><button type="button" class="play">재생</button> </li>
+                        <li><button type="button" class="pause">일시정지</button></li>
+                        <li><button type="button" class="stop">정지</button> </li>
+                      </ul>
+                      <div id="playbar1" class="playbar">
+                        <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
+                      </div>
+                    </div> 
                     <button type="button" class="next">다음 결과물</button>
                   </div>
                 </section>
@@ -228,16 +228,16 @@ Copyright © 2024 KMA. All rights reserved.
                   </div>
                   <div class="remote_map">
                     <button type="button" class="prev">이전 결과물</button>
-                    <div class="progress">              
-  <ul class="remote">
-    <li><button type="button" class="play">재생</button> </li>
-    <li><button type="button" class="pause">일시정지</button></li>
-    <li><button type="button" class="stop">정지</button> </li>
-  </ul>
-  <div id="playbar" class="playbar">
-    <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
-  </div>
-</div> 
+                    <div class="progress">
+                      <ul class="remote">
+                        <li><button type="button" class="play">재생</button> </li>
+                        <li><button type="button" class="pause">일시정지</button></li>
+                        <li><button type="button" class="stop">정지</button> </li>
+                      </ul>
+                      <div id="playbar2" class="playbar">
+                        <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
+                      </div>
+                    </div> 
                     <button type="button" class="next">다음 결과물</button>
                   </div>
                 </section>
@@ -264,16 +264,16 @@ Copyright © 2024 KMA. All rights reserved.
                   </div>
                   <div class="remote_map">
                     <button type="button" class="prev">이전 결과물</button>
-                    <div class="progress">              
-  <ul class="remote">
-    <li><button type="button" class="play">재생</button> </li>
-    <li><button type="button" class="pause">일시정지</button></li>
-    <li><button type="button" class="stop">정지</button> </li>
-  </ul>
-  <div id="playbar" class="playbar">
-    <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
-  </div>
-</div> 
+                    <div class="progress">
+                      <ul class="remote">
+                        <li><button type="button" class="play">재생</button> </li>
+                        <li><button type="button" class="pause">일시정지</button></li>
+                        <li><button type="button" class="stop">정지</button> </li>
+                      </ul>
+                      <div id="playbar3" class="playbar">
+                        <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
+                      </div>
+                    </div> 
                     <button type="button" class="next">다음 결과물</button>
                   </div>
                 </section>
@@ -298,16 +298,16 @@ Copyright © 2024 KMA. All rights reserved.
                   </div>
                   <div class="remote_map">
                     <button type="button" class="prev">이전 결과물</button>
-                    <div class="progress">              
-  <ul class="remote">
-    <li><button type="button" class="play">재생</button> </li>
-    <li><button type="button" class="pause">일시정지</button></li>
-    <li><button type="button" class="stop">정지</button> </li>
-  </ul>
-  <div id="playbar" class="playbar">
-    <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
-  </div>
-</div> 
+                    <div class="progress">
+                    <ul class="remote">
+                      <li><button type="button" class="play">재생</button> </li>
+                      <li><button type="button" class="pause">일시정지</button></li>
+                      <li><button type="button" class="stop">정지</button> </li>
+                    </ul>
+                    <div id="playbar4" class="playbar">
+                      <div id="pct" class="pct" style="--w:21;" data-value="AM 10:00"></div>
+                    </div>
+                  </div> 
                     <button type="button" class="next">다음 결과물</button>
                   </div>
                 </section>
@@ -534,13 +534,22 @@ slc : min = 0.000000000000000E+00, max = 0.100000000000000E+01
   commonInit();
 </script>
 <script>
-//view옵션
+//view옵션 data-value 값에 따라 .play_map에 class를 변경합니다.
+// $_viewOpt:('single','doubleCol','doubleRow','triple','quardruple');
+
 $('#viewOpt').on('click','.optionItem',function(e){
   var val = e.target.dataset.value;
   $('.play_map').removeClass().addClass('play_map').addClass(val); 
 })
-//플레이바 (플레이바가 여러개라 소스를 좀 수정해야할거 같은데 ㅠㅠ.. 이거까지 할 여력이 안되네요)
-// playbarEvt();
+
+// 플레이바 (플레이바가 여러개라 소스를 좀 수정해야할거 같은데 ㅠㅠ.. 이거까지 할 여력이 안되네요)
+// 수정하시거나 새로 만들어서 사용해주세요. 한개씩은 잘 되는데 소스가 좀 꼬인듯요
+// 윈도우 리사이즈, view옵션이 바꼈을 경우에도 수정이 필요해요.
+// $('.playbar').each((idx,el) =>{
+//   playbarEvt(el.getAttribute('id'));
+// })
+playbarEvt('playbar1');
+playbarEvt('playbar2');
 window.onresize = function(){
   posPlaybar = playbarInit();
   var pctW = pct.offsetWidth,
@@ -548,39 +557,41 @@ window.onresize = function(){
 
   if (calcPctW > 100) calcPctW = 100;
   pct.style.width = calcPctW + "%";
-  playbarEvt();
+  playbarEvt('playbar1');
 }
-function playbarEvt(){
-  var playbar = document.getElementById('playbar'),
-      pct = document.getElementById('pct');
-      // ctrl = document.getElementById('ctrl');
-  dragEvt(pct);
+function playbarEvt(el){
+  var playbar = document.getElementById(el);
+  var pct = $('#'+el).children('.pct')[0] ;
+  dragEvt(pct,playbar);
   clickEvt(playbar);
 }
-function playbarInit(){
+function playbarInit(el){
+// console.log(playbar)
   posPlaybar = {
     // loc : playbar.offsetParent.offsetLeft + playbar.offsetLeft,//부모 왼쪽 좌표
-    width : playbar.offsetWidth, //바 길이
-    loc : playbar.getBoundingClientRect()
+    width : el.offsetWidth, //바 길이
+    loc : el.getBoundingClientRect()
   };
   return posPlaybar;
 }
 
-function clickEvt(el){
+function clickEvt(playbar){
+console.log(playbar);
   var pos1 = 0, pos2 = 0;
-  posPlaybar = playbarInit();
-  el.onmousedown = onMouseDown;
+  posPlaybar = playbarInit(playbar);
+  playbar.onmousedown = onMouseDown;
   function onMouseDown(e){
     pos2 = e.clientX;
     pos1 = pos2 - posPlaybar.loc.left;
-    pct.style.width = pos1 + "px";
+    $(playbar).children('.pct').width(pos1);
+    // pct.style.width = pos1 + "px";
   }
 }
 
-function dragEvt(el){
+function dragEvt(el,playbar){
   var pos1 = 0, pos2 = 0;
 
-  posPlaybar = playbarInit();
+  posPlaybar = playbarInit(playbar);
   el.onmousedown = dragStrat;
   el.ontouchstart = dragStrat;
 
@@ -603,10 +614,11 @@ function dragEvt(el){
       pos1 = pos2 - e.touches[0].clientX;
       pos2 = e.touches[0].clientX;
     }
-    posCalc =  pct.offsetWidth - pos1;
+    posCalc =  el.offsetWidth - pos1;
 
     if (posCalc >= posPlaybar.width) return;
-    pct.style.width = posCalc + "px";
+    $(el).width(posCalc);
+    // pct.style.width = posCalc + "px";
   }
 
   function closeDragElement(){

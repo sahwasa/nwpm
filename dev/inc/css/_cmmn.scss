@@ -25,6 +25,9 @@
     &::after{@include fontello('\e92c');font-size:16px;color:#666;}
   }
 }
+.ico{
+  &_attach{@include ico_only('\ec9f');}
+}
 .f{
   @each $type, $col in $_work{
     $i: index($_work, $type $col);
@@ -97,11 +100,17 @@
   header h1{display:flex;gap:10px;padding:20px;
     strong{flex-shrink:0;}
   }
+  .board_tit{display:flex;gap:10px;padding:15px 20px;border-bottom:1px solid #e7e7e7;
+    .ipt_tit{flex:1;}
+  }
   .writer_info{border:1px solid #adadad;border-width:1px 0;border-bottom-color:#e7e7e7;padding:20px;}
   .dot_lst{display:flex;align-items:center;gap:40px;color:#555;}
   .article_conts{padding:20px;white-space:pre-wrap;}
+  [contenteditable]{@include ipt_common;min-height:calc(100vh - 450px);}
+  [data-empty]:empty::before{content:attr(data-empty);font-size:16px;color:#555;}
   .attached{@extend .writer_info;display:flex;gap:25px;border-top-color:#e7e7e7;border-bottom-color:#adadad;
     strong{line-height:29px;}
+    ul{display:flex;flex-direction:column;gap:10px;}
   }
 }
 .tbl_hover{
@@ -193,7 +202,7 @@
 }
 
 // attach
-.file_attach{position:relative;display:flex;align-items:center;min-height:70px;border:2px dashed #ebebeb;background-color:#fff;}  
+.file_attach{flex:1;position:relative;display:flex;align-items:center;min-height:70px;border:2px dashed #ebebeb;background-color:#fff;}  
 .drop_zone,
 .attach_zone{width:100%;height:100%;align-self:flex-start;}
 .attach_list{display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding:10px;}

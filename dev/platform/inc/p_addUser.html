@@ -1,0 +1,62 @@
+<dialog id="p_addUser" class="p_addUser line_style" style="--width:500px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>사용자 등록 및 수정</h1>
+      <div class="tool">
+        <button type="button" class="cancel" popovertarget="p_addUser" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="form_lst inline">
+        <li><label for="">아이디</label>
+          <span class="tool">
+            <input type="text" required placeholder="아이디 입력"><button class="btn_gray">중복확인</button>
+          </span>
+        </li>
+        <li><label for="">비밀번호</label>
+          <input type="password" required placeholder="비밀번호 입력">
+        </li>
+        <li><label for="">비밀번호 확인</label>
+          <input type="password" required placeholder="비밀번호 확인">
+        </li>
+        <li><label for="">비밀번호</label>
+          <button class="btn_gray">초기화</button>
+        </li>
+        <li><label for="">이름</label>
+          <input type="text" required placeholder="이름 입력">
+        </li>
+        <li><label for="">행정 기관</label>
+          <select name="" id="" required><option value="">선택</option></select>
+        </li>
+        <li><label for="">부서명</label>
+          <input type="text" placeholder="부서명 입력">
+        </li>
+        <li><label for="">연락처</label>
+          <input type="text" required placeholder="연락처 입력">
+        </li>
+        <li><label for="">E-mail</label>
+          <input type="text" required placeholder="이메일 입력">
+        </li>
+        <li><label for="">권한</label>
+          <select name="" id="" required><option value="">선택</option></select>
+        </li>
+        <li><label for="">승인여부</label>
+          <select name="" id="" required><option value="">승인</option></select>
+        </li>
+        <li><strong class="label">사용여부</strong>
+          <div class="switch_toggle">
+            <input type="checkbox" id="useYN2-1">
+            <label for="useYN2-1">사용여부</label>
+          </div>
+        </li>       
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_black">등록</button>
+      <button type="submit" class="btn_black">수정</button>
+      <button type="button" class="btn_red" popovertarget="p_confirm">삭제</button>
+      <button type="button" class="btn_darkgray" popovertarget="p_addUser" popvertargetaction="hide">취소</button>
+      <button type="button" class="btn_darkgray" popovertarget="p_addUser" popvertargetaction="hide">닫기</button>
+    </section>
+  </form>
+</dialog>
