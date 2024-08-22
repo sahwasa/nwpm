@@ -29,7 +29,5 @@
     "gulp-sourcemaps": "^3.0.0",
     "merge-stream": "^2.0.0",
     "sass": "^1.59.3"
-  },
-  "dependencies": {
   }
 }

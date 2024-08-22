@@ -32,7 +32,7 @@ textarea{width:100%;padding:15px;}
 
 .blind{@include blind;}
 // layout
-$layoutW:1400px;
+$layoutW:1200px;
 .layout{width:$layoutW;margin:0 auto;}
 .wrap{display:flex;flex-direction:column;align-items:center;position:relative;width:100%;min-width:$layoutW;height:100vh;font-size:14px;
   &:has(.login_wrap){display:block;.container{height:100%;}}
@@ -67,8 +67,8 @@ $layoutW:1400px;
 .footer{width:100%;background-color:#414141;color:#e0e0e0;text-align:center;padding:15px;margin-top:30px;}
 // .cont_body{padding:30px 0;}
 /*main*/
-#slider1_container{flex:1 0 350px;position:relative;margin:0 auto;top:0;left:0;width:1400px;overflow:hidden;
-  .slides{position:relative;left:0;top:0;display:flex;width:calc(1400px * 3);height:100%;
+#slider1_container{flex:1 0 350px;position:relative;margin:0 auto;top:0;left:0;width:$layoutW;overflow:hidden;
+  .slides{position:relative;left:0;top:0;display:flex;width:calc($layoutW * 3);height:100%;
     &>section{flex:1 0 auto;position:relative;left:0;top:0;height:100%;border-radius:10px;}
   }
 }
@@ -83,7 +83,7 @@ $layoutW:1400px;
   .slide0#{$i}{background:url(../images/banner-0#{$i}.png) 100% 50% no-repeat, url(../images/banner-bg-0#{$i}.png) right top / contain no-repeat fixed, #fff;}
 }
 .bannerTit{text-align:left;font-size:45px;color:$blue;font-weight:700;letter-spacing:-.45px;line-height:1;}
-.bannerTxt{text-align:justify;font-size:20px;color:#666;font-weight:700;margin:30px 0 40px;}
+.bannerTxt{max-width:70%;word-break:keep-all;font-size:20px;color:#666;font-weight:700;margin:30px 0 40px;}
 .btn_go{width:150px;height:35px;border:solid 1px #8f8f8f;border-radius:18px;background-color:#e7eff9;color:#000;line-height:35px;font-weight:700;text-align:center;}
 .remote{position:absolute;left:100px;bottom:50px;display:flex;gap:10px;
   .slideNav strong::after{content:"/";margin:0 5px;}
@@ -104,7 +104,7 @@ $layoutW:1400px;
     &:not(:first-of-type){border-left:1px solid #ccc;padding-left:25px;}
   }
   .banner{
-    div{display:flex;justify-content:space-between;align-items:center;gap:103px;
+    div{display:flex;justify-content:space-between;align-items:center;
       &::after{@include shape(100px,100px);flex-shrink:0;background-color:#e7eff9;border-radius:30px;background:url(../images/bg-kim-01.png) 50% no-repeat,#e7eff9;}}    
     &:not(:first-of-type) div::after{background-image:url(../images/bg-kim-02.png);}
     p{word-break:keep-all;}

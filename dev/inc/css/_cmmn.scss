@@ -73,7 +73,7 @@
 @mixin box{border-radius:5px;}
 .box{
   &_paleGray{@include box;background-color:#edf0f3;padding:20px;}
-  &_white{@include box;background-color:#fff;box-shadow:0 1px 8px rgba(0, 0, 0, .07);padding:30px;}
+  &_white{@include box;background-color:#fff;box-shadow:0 1px 8px rgba(0, 0, 0, .07);padding:20px;}
 }
 // table
 .tbl_top{display:flex;align-items:center;margin-bottom:15px;
