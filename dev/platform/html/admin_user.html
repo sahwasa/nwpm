@@ -29,8 +29,8 @@
       </div>
       <div class="tbl_top">
         <div class="tool">
-          <button type="button" class="btn_circleAdd" popovertarget="p_addDataResource">등록</button>
-          <button type="button" class="btn_circleMinus" popovertarget="p_addDataResource">삭제</button>
+          <button type="button" class="btn_circleAdd" popovertarget="p_addUser">등록</button>
+          <button type="button" class="btn_circleMinus" popovertarget="p_confirm">삭제</button>
         </div>
       </div>
       <div class="tbl_wrap">
@@ -61,7 +61,7 @@
               <td>2024-07-16 12:00:00</td>
               <td>사용</td>
               <td>승인</td>
-              <td><button type="button" class="btn_modify">수정</button></td>
+              <td><button type="button" class="btn_modify" popovertarget="p_addUser">수정</button></td>
             </tr>
           </tbody>
         </table>
@@ -70,6 +70,7 @@
     </section>  
   </main>
 </div>
+@@include('../inc/p_addUser.html')
 @@include('../inc/script.html')
 </body>
 </html>

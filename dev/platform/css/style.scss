@@ -166,6 +166,7 @@ $layoutW:1200px;
       &::before{content:'work status';display:block;color:#a7a7a7;}
     }
   }
+  .chart_wrap{display:flex;justify-content:center;align-items:center;}
 }
 .work_lst{flex:1;
   .box_white{max-height:calc(100vh - 455px);min-height:341px; overflow-y:auto;}

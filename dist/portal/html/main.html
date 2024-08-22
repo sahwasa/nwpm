@@ -75,9 +75,9 @@
         </div>        
         <div class="remote">
           <ul class="remoteBtn">
-            <li><button type="button" id="btn_prev_banner" class="prevBtn">이전</button></li>
-            <li><button type="button" id="btn_stop_banner" class="stopBtn">정지</button></li>
-            <li><button type="button" id="btn_next_banner" class="nextBtn">다음</button></li>
+            <li><button type="button" id="btn_prev" class="prevBtn">이전</button></li>
+            <li><button type="button" id="btn_auto" class="stopBtn">재생 및 정지</button></li>
+            <li><button type="button" id="btn_next" class="nextBtn">다음</button></li>
           </ul>
           <div class="slideNav">
             <strong>1</strong>3
@@ -260,14 +260,15 @@ Copyright © 2024 KMA. All Rights RESERVED.
 <script>
 var BANNER_WIDTH = 1200; // 배너 넓이
 var SHOW_DURATION = 1000; // 배너 속도
-var AUTO_PLAY_TIME = 8000; //배너 지연 시간
+var AUTO_PLAY_TIME = 5000; //배너 지연 시간
 var $banner_content;
 var nBannerLength = 0;
-var nCurrentBannerIndex = 0;
+var currentIdx = 0;
 var slideCont=$('.slideContentWrap');
 var $banner_dots;
 var $slideNav=$('.slideNav');
 var autoTImerID;
+var auto = true;
 var initY = -300; // 제목 높이값 초기화
 var contentY = 64; // 애니메이션 후 제목 높이값
 $(document).ready(function(){
@@ -282,75 +283,86 @@ function initMenu(){
 	$banner_content.width((BANNER_WIDTH) * nBannerLength);	
 	$banner_dots = $(".naviWrap li");
 	showBannerDotAt(0);
-	autoTImerID = 0;
+	autoTImerID = 0; 
 	$('.s01').animate({top:contentY},SHOW_DURATION);
+  play(auto);
 }
 function initEventListener(){
-	$("#btn_prev_banner").on("click", function(){
+	$("#btn_prev").on("click", function(){
 		prevBanner();
 	});
-	$("#btn_next_banner").on("click", function(){
+	$("#btn_next").on("click", function(){
 		nextBanner();
 	});
-	$("#btn_stop_banner").on("click", function(){
-		stopAutoPlay();
-	});
-	$("#btn_play_banner").on("click", function(){
-		startAutoPlay();
-	});
+	$("#btn_auto").on("click", function(e){
+		play(e,auto);
+	});	
 	$banner_dots.on("mouseenter",function(){
 		var nIndex = $banner_dots.index(this);
 		showBannerAt(nIndex);
-		$slide.eq(nCurrentBannerIndex).children('.slideContentWrap').animate({top:contentY},SHOW_DURATION);
+		$slide.eq(currentIdx).children('.slideContentWrap').animate({top:contentY},SHOW_DURATION);
 	})
-	var $banner_slider = $("#slider1_container");
 }
 function prevBanner(){	
-	var nIndex=nCurrentBannerIndex-1;
+	var nIndex=currentIdx-1;
 	if(nIndex<0)
 	nIndex = nBannerLength-1;
 	showBannerAt(nIndex);
-	$slide.eq(nCurrentBannerIndex+1).children('.slideContentWrap').animate({top:initY},SHOW_DURATION);
-	$slide.eq(nCurrentBannerIndex).children('.slideContentWrap').animate({top:contentY},SHOW_DURATION);		
+  setTimeout(contentAni,SHOW_DURATION);
+  function contentAni(){
+    $slide.eq(currentIdx+1).children('.slideContentWrap').animate({top:initY},SHOW_DURATION);
+    $slide.eq(currentIdx).children('.slideContentWrap').animate({top:contentY},SHOW_DURATION);	
+  }
 }
 function nextBanner(){	
-	var nIndex = nCurrentBannerIndex+1;
+	var nIndex = currentIdx+1;
 	if(nIndex >= nBannerLength)
 	nIndex = 0;
-	showBannerAt(nIndex);	
-	$slide.eq(nCurrentBannerIndex).children('.slideContentWrap').animate({top:contentY},SHOW_DURATION, function(){
-    $slide.eq(nCurrentBannerIndex-1).children('.slideContentWrap').animate({top:initY},SHOW_DURATION);
-  });
+	showBannerAt(nIndex);
+  setTimeout(contentAni,SHOW_DURATION);
+  function contentAni(){
+      $slide.eq(currentIdx).children('.slideContentWrap').animate({top:contentY},SHOW_DURATION, function(){
+      $slide.eq(currentIdx-1).children('.slideContentWrap').animate({top:initY},SHOW_DURATION);
+    });
+  }
 }
 function showBannerAt(nIndex){
-  if (nIndex != this.nCurrentBannerIndex) {		
+  if (nIndex != this.currentIdx) {		
 		var nPosition
 		nPosition = -BANNER_WIDTH * nIndex;
 
 		this.showBannerDotAt(nIndex);
-		$banner_content.stop();		
+		$banner_content.stop();
 		$banner_content.animate({			
 			left: nPosition
 		}, SHOW_DURATION);
-		this.nCurrentBannerIndex = nIndex;
+		this.currentIdx = nIndex;
 	}	
 }
 function showBannerDotAt(nIndex){
   this.$slideNav.children('strong').text(nIndex+1);
-	this.$banner_dots.eq(this.nCurrentBannerIndex).removeClass("on");
+	this.$banner_dots.eq(this.currentIdx).removeClass("on");
 	this.$banner_dots.eq(nIndex).addClass("on");
 }
-function startAutoPlay(){
+function play(e,auto){
+  if(e != undefined){el = e.target}
+  (auto) ? startAutoPlay(el) : stopAutoPlay(el);
+}
+function startAutoPlay(el){
 	if(this.autoTimerID!=0)
 		clearInterval(this.autoTimerID);
 	this.autoTimerID = setInterval(function(){
 		nextBanner();
 	},this.AUTO_PLAY_TIME);
+  $(el).toggleClass('playBtn','stopBtn');
+  auto = false;
 }
-function stopAutoPlay(){
+function stopAutoPlay(e){
 	if(this.autoTimerID!=0)
 		clearInterval(this.autoTimerID);
 	this.autoTimerID = 0;
+  $(el).toggleClass('playBtn','stopBtn');
+  auto = true;
 }
 </script>
 </body>

@@ -638,6 +638,21 @@ label:has(input) {
 	color: #666;
 }
 
+.ico_attach {
+	font-size: 0;
+	vertical-align: middle;
+	line-height: 1;
+}
+.ico_attach::before {
+	display: inline-block;
+	font-family: "fontello";
+	font-weight: normal;
+	content: "\ec9f";
+	line-height: 1;
+	font-size: 13px;
+	color: #848890;
+}
+
 .f_process {
 	color: #0137ff;
 }
@@ -892,6 +907,15 @@ label:has(input) {
 .tbl_view header h1 strong {
 	flex-shrink: 0;
 }
+.tbl_view .board_tit {
+	display: flex;
+	gap: 10px;
+	padding: 15px 20px;
+	border-bottom: 1px solid #e7e7e7;
+}
+.tbl_view .board_tit .ipt_tit {
+	flex: 1;
+}
 .tbl_view .writer_info, .tbl_view .attached {
 	border: 1px solid #adadad;
 	border-width: 1px 0;
@@ -908,6 +932,21 @@ label:has(input) {
 	padding: 20px;
 	white-space: pre-wrap;
 }
+.tbl_view [contenteditable] {
+	position: relative;
+	padding: 4px;
+	vertical-align: middle;
+	background: #fff;
+	border: 1px solid #d7d7d7;
+	min-height: 40px;
+	color: #555;
+	min-height: calc(100vh - 450px);
+}
+.tbl_view [data-empty]:empty::before {
+	content: attr(data-empty);
+	font-size: 16px;
+	color: #555;
+}
 .tbl_view .attached {
 	display: flex;
 	gap: 25px;
@@ -916,6 +955,11 @@ label:has(input) {
 }
 .tbl_view .attached strong {
 	line-height: 29px;
+}
+.tbl_view .attached ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .tbl_hover tbody tr:hover {
@@ -1294,6 +1338,7 @@ label:has(input) {
 }
 
 .file_attach {
+	flex: 1;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -1732,6 +1777,7 @@ dialog .btn_wrap, .modal .btn_wrap {
 	display: flex;
 	gap: 5px;
 	align-items: center;
+	min-height: 40px;
 }
 .form_lst.inline > li:has(.invalid) {
 	padding-bottom: 23px;

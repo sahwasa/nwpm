@@ -61,7 +61,7 @@ z-index:15;width:calc(var(--w)*1px);height:calc(var(--h)*1px);
   input[type="text"],input[type="password"],textarea,[contenteditable],select{width:100%;font-size:14px;border:1px solid $gray;line-height:28px;color:#555;box-shadow:none;padding:5px 15px;}
   [contenteditable]{min-height:var(--h);max-height:430px;overflow-y:auto;}
   &.inline{gap:15px;
-    & > li{position:relative;display:flex;gap:5px;align-items:center;
+    & > li{position:relative;display:flex;gap:5px;align-items:center;min-height:40px;
       &:has(.invalid){padding-bottom:23px;
         label{color:$tomato;}
       }
