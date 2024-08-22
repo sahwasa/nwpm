@@ -80,12 +80,14 @@
    &:nth-of-type(#{$num}){text-align:left;}
   } 
 }
-@mixin bar($w:$w,$h:$h,$gap:$gap,$col:$col){@include shape($w,$h);background-color:$col;margin:0 15px 0 #{15 - $gap};}
+@mixin bar($w:$w,$h:$h,$gap:$gap,$col:$col){
+  @include shape($w,$h);background-color:$col;margin:0 15px 0 #{15 - $gap};
+}
 @mixin divide($w:1px,$h:10px,$gap:5px,$col:$gray,$after:false){
   position:relative;display:inline-flex;align-items:center;
   @if($after){
     &::after{@include bar($w:$w,$h:$h,$gap:$gap,$col:$col);@content}
-  }else{
+  }@else{
     &::before{@include bar($w:$w,$h:$h,$gap:$gap,$col:$col);@content}
   }
 }
